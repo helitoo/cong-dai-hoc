@@ -1,0 +1,1955 @@
+[
+  {
+    "id": "QHL",
+    "name": "TĐH Luật, ĐHQG-HN",
+    "short_name": "UL",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHQ",
+    "name": "Trường Quốc tế, ĐHQG-HN",
+    "short_name": "IS",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHY",
+    "name": "TĐH Y Dược, ĐHQG-HN",
+    "short_name": "UMP",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHI",
+    "name": "TĐH Công nghệ, ĐHQG-HN",
+    "short_name": "UET",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHE",
+    "name": "TĐH Kinh tế, ĐHQG-HN",
+    "short_name": "UEB",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHS",
+    "name": "TĐH Giáo dục, ĐHQG-HN",
+    "short_name": "UED",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHT",
+    "name": "TĐH Khoa học tự nhiên, ĐHQG-HN",
+    "short_name": "HUS",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHX",
+    "name": "TĐH Khoa học Xã hội và Nhân văn, ĐHQG-HN",
+    "short_name": "USSH",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHD",
+    "name": "Trường Quản trị và kinh doanh, ĐHQG-HN",
+    "short_name": "HSB",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QHF",
+    "name": "TĐH Ngoại ngữ, ĐHQG-HN",
+    "short_name": "ULIS",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "VJU",
+    "name": "TĐH Việt Nhật, ĐHQG-HN",
+    "short_name": "VJU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "NVH",
+    "name": "HV Âm nhạc Quốc gia VN",
+    "short_name": "VNAM",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HBT",
+    "name": "HV Báo chí Tuyên truyền",
+    "short_name": "AJC",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HCP",
+    "name": "HV Chính sách và Phát triển",
+    "short_name": "APD",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "BVH",
+    "name": "HV Công nghệ Bưu chính Viễn thông",
+    "short_name": "PTIT",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HCH",
+    "name": "HV Hành chính Quốc gia",
+    "short_name": "NAPA",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "KMA",
+    "name": "HV Kỹ thuật Mật mã",
+    "short_name": "KMA",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "NHH",
+    "name": "HV Ngân hàng",
+    "short_name": "BAV",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HQT",
+    "name": "HV Ngoại giao",
+    "short_name": "DAV",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HVN",
+    "name": "HV Nông nghiệp VN",
+    "short_name": "VNUA",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HPN",
+    "name": "HV Phụ nữ VN",
+    "short_name": "VWA",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HVQ",
+    "name": "HV Quản lý Giáo dục",
+    "short_name": "NAEM",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HTC",
+    "name": "HV Tài chính",
+    "short_name": "AOF",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HTN",
+    "name": "HV Thanh Thiếu niên VN",
+    "short_name": "VYA",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HTA",
+    "name": "HV Tòa án",
+    "short_name": null,
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "HYD",
+    "name": "HV Y - Dược học cổ truyền VN",
+    "short_name": "VUTM",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "LDA",
+    "name": "TĐH Công đoàn",
+    "short_name": "TUU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "GTA",
+    "name": "TĐH Công nghệ Giao thông vận tải",
+    "short_name": "UTT",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "CCM",
+    "name": "TĐH Công nghiệp Dệt may HN",
+    "short_name": "HICT",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DCN",
+    "name": "TĐH Công nghiệp HN",
+    "short_name": "HaUI",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "VHD",
+    "name": "TĐH Công nghiệp Việt Hung",
+    "short_name": "VIU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DDN",
+    "name": "TĐH Đại Nam",
+    "short_name": "DNU",
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "DDL",
+    "name": "TĐH Điện lực",
+    "short_name": "EPU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DKH",
+    "name": "TĐH Dược HN",
+    "short_name": "HUP",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "FPT",
+    "name": "TĐH FPT",
+    "short_name": "FPTU",
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "GHA",
+    "name": "TĐH Giao thông vận tải",
+    "short_name": "UTC",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "NHF",
+    "name": "TĐH HN",
+    "short_name": "HANU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "ETU",
+    "name": "TĐH Hòa Bình",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "KCN",
+    "name": "TĐH Khoa học và Công nghệ HN",
+    "short_name": "USTH",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DKS",
+    "name": "TĐH Kiểm sát HN",
+    "short_name": "HPU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "KTA",
+    "name": "TĐH Kiến trúc HN",
+    "short_name": "HAU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DKK",
+    "name": "TĐH Kinh tế Kỹ thuật Công nghiệp",
+    "short_name": "UNETI",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "KHA",
+    "name": "TĐH Kinh tế Quốc dân",
+    "short_name": "NEU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "LNH",
+    "name": "TĐH Lâm nghiệp",
+    "short_name": "VNUF",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DLX",
+    "name": "TĐH Lao động Xã hội",
+    "short_name": "ULSA",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "LPH",
+    "name": "TĐH Luật HN",
+    "short_name": "HLU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "MDA",
+    "name": "TĐH Mỏ Địa chất HN",
+    "short_name": "HUMG",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "MTC",
+    "name": "TĐH Mỹ thuật Công nghiệp",
+    "short_name": "UAD",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "MTH",
+    "name": "TĐH Mỹ thuật VN",
+    "short_name": "VUFA",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "NTH",
+    "name": "TĐH Ngoại thương",
+    "short_name": "FTU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "NTU",
+    "name": "TĐH Nguyễn Trãi",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "SKD",
+    "name": "TĐH Sân khấu Điện ảnh",
+    "short_name": null,
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "SPH",
+    "name": "TĐH Sư phạm HN",
+    "short_name": "HNUE",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "GNT",
+    "name": "TĐH Sư phạm Nghệ thuật Trung ương HN",
+    "short_name": null,
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "TDH",
+    "name": "TĐH Sư phạm Thể dục thể thao HN",
+    "short_name": "HUPES",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "FBU",
+    "name": "TĐH Tài chính Ngân hàng HN",
+    "short_name": "FPU",
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "DMT",
+    "name": "TĐH Tài nguyên và Môi trường HN",
+    "short_name": "HUNRE",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DTL",
+    "name": "TĐH Thăng Long",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "TDD",
+    "name": "TĐH Thành Đô",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "HNM",
+    "name": "TĐH Thủ đô HN",
+    "short_name": "HNMU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "TMU",
+    "name": "TĐH Thương mại",
+    "short_name": "TMU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "TLA",
+    "name": "TĐH Thủy lợi",
+    "short_name": "TLU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "VHH",
+    "name": "TĐH Văn hóa HN",
+    "short_name": "HUC",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "XDA",
+    "name": "TĐH Xây dựng HN",
+    "short_name": "HUCE",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "YHB",
+    "name": "TĐH Y HN",
+    "short_name": "HMU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "YTC",
+    "name": "TĐH Y tế Công cộng",
+    "short_name": null,
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DCQ",
+    "name": "TĐH Công nghệ và Quản lý Hữu nghị",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "DDU",
+    "name": "TĐH Đông Đô",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "DQK",
+    "name": "TĐH Kinh doanh và Công nghệ HN",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "DPD",
+    "name": "TĐH Phương Đông",
+    "short_name": null,
+    "public": 0,
+    "region": "HNC"
+  },
+  {
+    "id": "MHN",
+    "name": "TĐH Mở HN",
+    "short_name": "HOU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "PKA",
+    "name": "TĐH Phenikaa",
+    "short_name": null,
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "CMC",
+    "name": "TĐH CMC",
+    "short_name": "CMCU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "QSY",
+    "name": "TĐH Khoa học sức khỏe, ĐHQG-HCM",
+    "short_name": "UHS",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "QSC",
+    "name": "TĐH Công nghệ thông tin, ĐHQG-HCM",
+    "short_name": "UIT",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "QST",
+    "name": "TĐH Khoa học tự nhiên, ĐHQG-HCM",
+    "short_name": "US",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "QSB",
+    "name": "TĐH Bách Khoa, ĐHQG-HCM",
+    "short_name": "HCMUT BKU",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "QSX",
+    "name": "TĐH Khoa học xã hội và Nhân văn, ĐHQG-HCM",
+    "short_name": "USSH",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "QSQ",
+    "name": "TĐH Quốc tế, ĐHQG-HCM",
+    "short_name": "HCMIU",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "QSK",
+    "name": "TĐH Kinh tế - Luật, ĐHQG-HCM",
+    "short_name": "UEL",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "HVC",
+    "name": "HV Cán bộ TP.HCM",
+    "short_name": "HCA",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "BVS",
+    "name": "HV Công nghệ Bưu chính Viễn thông - Cơ sở TP.HCM",
+    "short_name": "PTIT",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "HHK",
+    "name": "HV Hàng không VN",
+    "short_name": "VAA",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "NVS",
+    "name": "Nhạc viện TP.HCM",
+    "short_name": null,
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DCT",
+    "name": "TĐH Công thương TP.HCM",
+    "short_name": "HUIT",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "IUH",
+    "name": "TĐH Công nghiệp TP.HCM",
+    "short_name": "UIH",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "GSA",
+    "name": "TĐH Giao thông vận tải - Cơ sở 2",
+    "short_name": "UTC2",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "GTS",
+    "name": "TĐH Giao thông vận tải TP.HCM",
+    "short_name": "UTH",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "HSU",
+    "name": "TĐH Hoa Sen",
+    "short_name": "HSU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "KTS",
+    "name": "TĐH Kiến trúc TP.HCM",
+    "short_name": "UAH",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "UEF",
+    "name": "TĐH Kinh tế - Tài chính TP.HCM",
+    "short_name": "UEF",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "KSA",
+    "name": "TĐH Kinh tế TP.HCM",
+    "short_name": "UEH",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DLS",
+    "name": "TĐH Lao động Xã hội - Cơ sở TP.HCM",
+    "short_name": "ULSA",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "LPS",
+    "name": "TĐH Luật TP.HCM",
+    "short_name": "UL",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "MBS",
+    "name": "TĐH Mở TP.HCM ",
+    "short_name": "HCMOU",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "MTS",
+    "name": "TĐH Mỹ thuật TP.HCM",
+    "short_name": "UFA",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "NHS",
+    "name": "TĐH Ngân hàng TP.HCM",
+    "short_name": "HUB",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "NTS",
+    "name": "TĐH Ngoại thương - Cơ sở phía Nam",
+    "short_name": "FTU2",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "NTT",
+    "name": "TĐH Nguyễn Tất Thành",
+    "short_name": "NTTU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "NLS",
+    "name": "TĐH Nông Lâm TP.HCM",
+    "short_name": "NLU",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "HIU",
+    "name": "TĐH Quốc tế Hồng Bàng",
+    "short_name": "HBU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "SGD",
+    "name": "TĐH Sài Gòn",
+    "short_name": "SGU",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DSD",
+    "name": "TĐH Sân khấu Điện ảnh TP.HCM",
+    "short_name": null,
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "SPK",
+    "name": "TĐH Sư phạm Kỹ thuật TP.HCM",
+    "short_name": "HCMUTE",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "SPS",
+    "name": "TĐH Sư phạm TP.HCM",
+    "short_name": "HCMUE",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DMS",
+    "name": "TĐH Tài chính - Marketing",
+    "short_name": "UEF",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DTM",
+    "name": "TĐH Tài nguyên và Môi trường TP.HCM",
+    "short_name": "HCMUNRE",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "TDS",
+    "name": "TĐH Thể dục Thể thao TP.HCM",
+    "short_name": "USH",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "TLS",
+    "name": "TĐH Thủy lợi - Cơ sở 2",
+    "short_name": null,
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DTT",
+    "name": "TĐH Tôn Đức Thắng",
+    "short_name": "TDTU",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "VHS",
+    "name": "TĐH Văn hóa TP.HCM",
+    "short_name": "HCMUC",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "VGU",
+    "name": "TĐH Việt - Đức",
+    "short_name": null,
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "YDS",
+    "name": "TĐH Y Dược TP.HCM",
+    "short_name": "UMP",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "TYS",
+    "name": "TĐH Y khoa Phạm Ngọc Thạch",
+    "short_name": "PNTU",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DSG",
+    "name": "TĐH Công nghệ Sài Gòn",
+    "short_name": "STU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "GDU",
+    "name": "TĐH Gia Định",
+    "short_name": "GDU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "DKC",
+    "name": "TĐH Công nghệ TP.HCM",
+    "short_name": "HUTECH",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "DHV",
+    "name": "TĐH Hùng Vương TPHCM",
+    "short_name": "HVU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "SIU",
+    "name": "TĐH Quốc tế Sài Gòn",
+    "short_name": "SIU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "DVH",
+    "name": "TĐH Văn Hiến",
+    "short_name": "VHU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "DVL",
+    "name": "TĐH Văn Lang",
+    "short_name": "VLU",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "STS",
+    "name": "TĐH Sư phạm Thể dục thể thao TP. HCM",
+    "short_name": "UPES",
+    "public": 1,
+    "region": "HCMC"
+  },
+  {
+    "id": "DNT",
+    "name": "TĐH Ngoại ngữ - Tin học TP.HCM",
+    "short_name": "HUFLIT",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "UMT",
+    "name": "TĐH Quản lý và công nghệ TPHCM",
+    "short_name": "UMT",
+    "public": 0,
+    "region": "HCMC"
+  },
+  {
+    "id": "DTF",
+    "name": "Trường Ngoại ngữ, ĐH Thái Nguyên",
+    "short_name": "SFL",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTQ",
+    "name": "Khoa Quốc tế, ĐH Thái Nguyên",
+    "short_name": "IS",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTP",
+    "name": "Phân hiệu ĐH Thái Nguyên tại Lào Cai",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTC",
+    "name": "TĐH Công nghệ thông tin và Truyền thông, ĐH Thái Nguyên",
+    "short_name": "ICTU",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTZ",
+    "name": "TĐH Khoa học, ĐH Thái Nguyên",
+    "short_name": "TNUS",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTE",
+    "name": "TĐH Kinh tế - Quản trị kinh doanh, ĐH Thái Nguyên",
+    "short_name": "TUEBA",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTK",
+    "name": "TĐH Kỹ thuật Công nghiệp, ĐH Thái Nguyên",
+    "short_name": "TNUT",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTN",
+    "name": "TĐH Nông lâm, ĐH Thái Nguyên",
+    "short_name": "TUAF",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTS",
+    "name": "TĐH Sư phạm, ĐH Thái Nguyên",
+    "short_name": "TNUE",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTY",
+    "name": "TĐH Y Dược, ĐH Thái Nguyên",
+    "short_name": "TUMP",
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DCA",
+    "name": "TĐH Chu Văn An",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "DDA",
+    "name": "TĐH Công nghệ Đông Á",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "DDM",
+    "name": "TĐH Công nghiệp Quảng Ninh",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "VUI",
+    "name": "TĐH Công nghiệp Việt Trì",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DHP",
+    "name": "TĐH Quản lý và công nghệ Hải Phòng",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "DTV",
+    "name": "TĐH Lương Thế Vinh",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "YDD",
+    "name": "TĐH Điều dưỡng Nam Định",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "HLU",
+    "name": "TĐH Hạ Long",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DKT",
+    "name": "TĐH Hải Dương",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "THP",
+    "name": "TĐH Hải Phòng",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "HHA",
+    "name": "TĐH Hàng hải",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DNB",
+    "name": "TĐH Hoa Lư",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "HDT",
+    "name": "TĐH Hồng Đức",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "THV",
+    "name": "TĐH Hùng Vương",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "UKB",
+    "name": "TĐH Kinh Bắc",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "DKY",
+    "name": "TĐH Kỹ thuật Y tế Hải Dương",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DBG",
+    "name": "TĐH Nông Lâm Bắc Giang",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DBH",
+    "name": "TĐH Quốc tế Bắc Hà",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "SDU",
+    "name": "TĐH Sao Đỏ",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "SP2",
+    "name": "TĐH Sư phạm HN 2",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "SKH",
+    "name": "TĐH Sư phạm Kỹ thuật Hưng Yên",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "SKN",
+    "name": "TĐH Sư phạm Kỹ thuật Nam Định",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DFA",
+    "name": "TĐH Tài chính - Quản trị kinh doanh",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "TQU",
+    "name": "TĐH Tân Trào",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "TTB",
+    "name": "TĐH Tây Bắc",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DTB",
+    "name": "TĐH Thái Bình",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DDB",
+    "name": "TĐH Thành Đông",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "TDB",
+    "name": "TĐH Thể dục Thể thao Bắc Ninh",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DVP",
+    "name": "TĐH Trưng Vương",
+    "short_name": null,
+    "public": 0,
+    "region": "NR"
+  },
+  {
+    "id": "DVD",
+    "name": "TĐH Văn hóa Thể thao và Du lịch Thanh Hóa",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "DVB",
+    "name": "TĐH Việt Bắc",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "YPB",
+    "name": "TĐH Y Dược Hải Phòng",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "YTB",
+    "name": "TĐH Y Dược Thái Bình",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "THU",
+    "name": "TĐH Y khoa Tokyo VN",
+    "short_name": null,
+    "public": 1,
+    "region": "NR"
+  },
+  {
+    "id": "TAG",
+    "name": "TĐH An Giang, ĐHQG-HCM",
+    "short_name": "AGU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "BVU",
+    "name": "TĐH Bà Rịa - Vũng Tàu",
+    "short_name": "BRVTU",
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "DBL",
+    "name": "TĐH Bạc Liêu",
+    "short_name": "BLU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "DBD",
+    "name": "TĐH Bình Dương",
+    "short_name": "BDU",
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "TCT",
+    "name": "ĐH Cần Thơ",
+    "short_name": "CTU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "DCD",
+    "name": "TĐH Công nghệ Đồng Nai",
+    "short_name": null,
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "MIT",
+    "name": "TĐH Công nghệ Miền Đông",
+    "short_name": null,
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "DCL",
+    "name": "TĐH Cửu Long",
+    "short_name": null,
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "DLH",
+    "name": "TĐH Lạc Hồng",
+    "short_name": null,
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "PVU",
+    "name": "TĐH Dầu khí VN",
+    "short_name": null,
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "DNU",
+    "name": "TĐH Đồng Nai",
+    "short_name": "DNU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "SPD",
+    "name": "TĐH Đồng Tháp",
+    "short_name": "DThU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "TKG",
+    "name": "TĐH Kiên Giang",
+    "short_name": "KGU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "DLA",
+    "name": "TĐH Kinh tế - Công nghiệp Long An",
+    "short_name": null,
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "DKB",
+    "name": "TĐH Kinh tế Kỹ thuật Bình Dương",
+    "short_name": null,
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "KCC",
+    "name": "TĐH Kỹ thuật Công nghệ Cần Thơ",
+    "short_name": "CTUET",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "LNS",
+    "name": "TĐH Lâm nghiệp - Cơ sở 2",
+    "short_name": "VNUF2",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "DNC",
+    "name": "TĐH Nam Cần Thơ",
+    "short_name": "DNC",
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "EIU",
+    "name": "TĐH Quốc tế Miền Đông",
+    "short_name": "EIU",
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "VLU",
+    "name": "TĐH Sư phạm Kỹ thuật Vĩnh Long",
+    "short_name": "VLUTE",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "TTU",
+    "name": "TĐH Tân Tạo",
+    "short_name": "TTU",
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "DTD",
+    "name": "TĐH Tây Đô",
+    "short_name": "TDU",
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "TDM",
+    "name": "TĐH Thủ Dầu Một",
+    "short_name": "TDMU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "TTG",
+    "name": "TĐH Tiền Giang",
+    "short_name": "TGU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "DVT",
+    "name": "TĐH Trà Vinh",
+    "short_name": "TVU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "VTT",
+    "name": "TĐH Võ Trường Toản",
+    "short_name": "VTTU",
+    "public": 0,
+    "region": "SR"
+  },
+  {
+    "id": "MTU",
+    "name": "TĐH Xây dựng Miền Tây",
+    "short_name": "MTU",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "YCT",
+    "name": "TĐH Y Dược Cần Thơ",
+    "short_name": "CTUMP",
+    "public": 1,
+    "region": "SR"
+  },
+  {
+    "id": "DHD",
+    "name": "Trường Du lịch, ĐH Huế",
+    "short_name": "HUHT",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHC",
+    "name": "Khoa Giáo dục Thể chất, ĐH Huế",
+    "short_name": "FPU",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHT",
+    "name": "TĐH Khoa học, ĐH Huế",
+    "short_name": "HUSC",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHK",
+    "name": "TĐH Kinh tế, ĐH Huế",
+    "short_name": "HCE",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHL",
+    "name": "TĐH Nông Lâm, ĐH Huế",
+    "short_name": "HUAF",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHN",
+    "name": "TĐH Nghệ thuật, ĐH Huế",
+    "short_name": "HUA",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHA",
+    "name": "TĐH Luật, ĐH Huế",
+    "short_name": "HUL",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHF",
+    "name": "TĐH Ngoại ngữ, ĐH Huế",
+    "short_name": "HUFLIS",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHS",
+    "name": "TĐH Sư phạm, ĐH Huế",
+    "short_name": "HUCE",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHY",
+    "name": "TĐH Y Dược, ĐH Huế",
+    "short_name": "HUMP",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHE",
+    "name": "Khoa Kỹ thuật và công nghệ, ĐH Huế",
+    "short_name": "HUET",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHI",
+    "name": "Khoa Quốc tế, ĐH Huế",
+    "short_name": "HUIS",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DHQ",
+    "name": "Phân hiệu ĐH Huế tại quảng Trị",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDG",
+    "name": "Khoa Giáo dục Thể chất, ĐH Đà Nẵng",
+    "short_name": "FPE",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDY",
+    "name": "Khoa Y Dược, ĐH Đà Nẵng",
+    "short_name": "SMP",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDP",
+    "name": "Phân hiệu ĐH Đà Nẵng tại Kon Tum",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDQ",
+    "name": "TĐH Kinh tế, ĐH Đà Nẵng",
+    "short_name": "DUE",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDF",
+    "name": "TĐH Ngoại ngữ, ĐH Đà Nẵng",
+    "short_name": "UFL",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDS",
+    "name": "TĐH Sư phạm, ĐH Đà Nẵng",
+    "short_name": "UED",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DSK",
+    "name": "TĐH Sư phạm Kỹ thuật, ĐH Đà Nẵng",
+    "short_name": "UTE",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDV",
+    "name": "Viện nghiên cứu đào tạo Việt - Anh, ĐH Đà Nẵng",
+    "short_name": "VNUK",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "VKU",
+    "name": "Khoa Công nghệ thông tin và Truyền thông, ĐH Đà Nẵng",
+    "short_name": "VKU",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "KTD",
+    "name": "TĐH Kiến trúc Đà Nẵng",
+    "short_name": "DAU",
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "BMU",
+    "name": "TĐH Y dược Buôn Ma Thuột",
+    "short_name": "BMTU",
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DVX",
+    "name": "TĐH Công nghệ Vạn Xuân",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DCV",
+    "name": "TĐH Công nghiệp Vinh",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "TDL",
+    "name": "TĐH Đà Lạt",
+    "short_name": "DLU",
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DDT",
+    "name": "TĐH Duy Tân",
+    "short_name": "DTU",
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DPX",
+    "name": "TĐH Dân lập Phú Xuân",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DYD",
+    "name": "TĐH Yersin Đà Lạt",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DAD",
+    "name": "TĐH Đông Á",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "HHT",
+    "name": "TĐH Hà Tĩnh",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "UKH",
+    "name": "TĐH Khánh Hòa",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "CEA",
+    "name": "TĐH Kinh tế Nghệ An",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "YDN",
+    "name": "TĐH Kỹ thuật Y Dược Đà Nẵng",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "HVA",
+    "name": "HV Âm nhạc Huế",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "TSN",
+    "name": "TĐH Nha Trang",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DPQ",
+    "name": "TĐH Phạm Văn Đồng",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DPC",
+    "name": "TĐH Phan Châu Trinh",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DPT",
+    "name": "TĐH Phan Thiết",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DPY",
+    "name": "TĐH Phú Yên",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DQB",
+    "name": "TĐH Quảng Bình",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DQU",
+    "name": "TĐH Quảng Nam",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "DQT",
+    "name": "TĐH Quang Trung",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "DQN",
+    "name": "TĐH Quy Nhơn",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "SKV",
+    "name": "TĐH Sư phạm Kỹ thuật Vinh",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "UFA",
+    "name": "TĐH Tài chính Kế toán",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "TTN",
+    "name": "TĐH Tây Nguyên",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "TBD",
+    "name": "TĐH Thái Bình Dương",
+    "short_name": null,
+    "public": 0,
+    "region": "CR"
+  },
+  {
+    "id": "TTD",
+    "name": "TĐH Thể dục Thể thao Đà Nẵng",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "TDV",
+    "name": "TĐH Vinh",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "XDT",
+    "name": "TĐH Xây dựng Miền Trung",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "YKV",
+    "name": "TĐH Y khoa Vinh",
+    "short_name": null,
+    "public": 1,
+    "region": "CR"
+  },
+  {
+    "id": "BPH",
+    "name": "HV Biên phòng",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "HQH",
+    "name": "HV Hải Quân",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "HEH",
+    "name": "HV Hậu cần",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "NQH",
+    "name": "HV Khoa học Quân sự",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "KQH",
+    "name": "HV Kỹ thuật Quân sự",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "PKH",
+    "name": "HV Phòng không - Không quân",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "YQH",
+    "name": "HV Quân Y",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "LCH",
+    "name": "TĐH Chính trị (Trường Sĩ quan Chính trị)",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "ZNH",
+    "name": "TĐH Văn hóa - Nghệ thuật Quân đội",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "SNH",
+    "name": "Trường Sĩ quan Công binh",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "DCH",
+    "name": "Trường Sĩ quan Đặc công",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "KGH",
+    "name": "Trường Sĩ quan không quân",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "VPH",
+    "name": "Trường Sĩ quan Kỹ thuật Quân sự Vinhempich (ĐH Trần Đại Nghĩa)  ",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "LAH",
+    "name": "Trường Sĩ quan Lục quân 1 (ĐH Trần Quốc Tuấn)",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "LBH",
+    "name": "Trường Sĩ quan Lục quân 2 (ĐH Nguyễn Huệ)",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "PBH",
+    "name": "Trường Sĩ quan Pháo binh",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "HGH",
+    "name": "Trường Sĩ quan Phòng Hóa",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "TGH",
+    "name": "Trường Sĩ quan Tăng - Thiết giáp",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "TTH",
+    "name": "Trường Sĩ quan Thông tin",
+    "short_name": null,
+    "public": 1,
+    "region": "QD"
+  },
+  {
+    "id": "ANH",
+    "name": "HV An ninh Nhân dân",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "CSH",
+    "name": "HV Cảnh sát Nhân dân",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "HCA",
+    "name": "HV Chính trị Công an Nhân dân",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "ANS",
+    "name": "TĐH An ninh nhân dân",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "CSS",
+    "name": "TĐH Cảnh sát nhân dân",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "HCB",
+    "name": "TĐH Kỹ thuật - Hậu cần Công an nhân dân phía Bắc",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "HCN",
+    "name": "TĐH Kỹ thuật - Hậu cần Công an nhân dân phía Nam",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "PCH",
+    "name": "TĐH Phòng cháy chữa cháy phía Bắc",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "PCS",
+    "name": "TĐH Phòng cháy chữa cháy phía Nam",
+    "short_name": null,
+    "public": 1,
+    "region": "CA"
+  },
+  {
+    "id": "BKA",
+    "name": "ĐH Bách khoa HN",
+    "short_name": "HUST BKU",
+    "public": 1,
+    "region": "HNC"
+  },
+  {
+    "id": "DDK",
+    "name": "TĐH Bách Khoa, ĐH Đà Nẵng",
+    "short_name": "DUT BKU",
+    "public": 1,
+    "region": "CR"
+  }
+]

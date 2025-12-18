@@ -1,0 +1,97 @@
+industry_l1_id,id,name
+714,01,Khoa học giáo dục
+714,02,Đào tạo giáo viên
+714,90,Khác
+721,01,Mỹ thuật
+721,02,Nghệ thuật trình diễn
+721,03,Nghệ thuật nghe nhìn
+721,04,Mỹ thuật ứng dụng
+721,90,Khác
+722,01,Ngôn ngữ văn học và văn hóa Việt Nam
+722,02,Ngôn ngữ văn học và văn hóa nước ngoài
+722,90,Khác
+731,01,Kinh tế học
+731,02,Khoa học chính trị
+731,03,Xã hội học và Nhân học
+731,04,Tâm lý học
+731,05,Địa lý học
+731,06,Khu vực học
+731,90,Khác
+732,01,Báo chí và truyền thông
+732,02,Thông tin - Thư viện
+732,03,Văn thư - Lưu trữ - Bảo tàng
+732,04,Xuất bản - Phát hành
+732,90,Khác
+734,01,Kinh doanh
+734,02,Tài chính - Ngân hàng - Bảo hiểm
+734,03,Kế toán - Kiểm toán
+734,04,Quản trị - Quản lý
+734,90,Khác
+738,01,Luật
+738,90,Khác
+742,01,Sinh học
+742,02,Sinh học ứng dụng
+742,90,Khác
+744,01,Khoa học vật chất
+744,02,Khoa học trái đất
+744,03,Khoa học môi trường
+744,90,Khác
+746,01,Toán học
+746,02,Thống kê
+746,90,Khác
+748,01,Máy tính
+748,02,Công nghệ thông tin
+748,90,Khác
+751,01,Công nghệ kỹ thuật kiến trúc và công trình xây dựng
+751,02,Công nghệ kỹ thuật cơ khí
+751,03,Công nghệ kỹ thuật điện điện tử và viễn thông
+751,04,Công nghệ hóa học vật liệu luyện kim và môi trường
+751,06,Quản lý công nghiệp
+751,07,Công nghệ dầu khí và khai thác
+751,08,Công nghệ kỹ thuật in
+751,90,Khác
+752,01,Kỹ thuật cơ khí và cơ kỹ thuật
+752,02,Kỹ thuật điện điện tử và viễn thông
+752,03,Kỹ thuật hóa học vật liệu luyện kim và môi trường
+752,04,Vật lý kỹ thuật
+752,05,Kỹ thuật địa chất địa vật lý và trắc địa
+752,06,Kỹ thuật mỏ
+752,90,Khác
+754,01,Chế biến lương thực thực phẩm và đồ uống
+754,02,"Sản xuất, chế biến sợi, vải, giày, da"
+754,90,Khác
+758,01,Kiến trúc và quy hoạch
+758,02,Xây dựng
+758,03,Quản lý xây dựng
+758,90,Khác
+762,01,Nông nghiệp
+762,02,Lâm nghiệp
+762,03,Thủy sản
+762,90,Khác
+764,01,Thú y
+764,90,Khác
+772,01,Y học
+772,02,Dược học
+772,03,Điều dưỡng - hộ sinh
+772,04,Dinh dưỡng
+772,05,Răng - Hàm - Mặt (Nha khoa)
+772,06,Kỹ thuật Y học
+772,07,Y tế công cộng
+772,08,Quản lý Y tế
+772,90,Khác
+776,01,Công tác xã hội
+776,90,Khác
+781,01,Du lịch
+781,02,Khách sạn nhà hàng
+781,03,Thể dục thể thao
+781,05,Kinh tế gia đình
+781,90,Khác
+784,01,Khai thác vận tải
+784,90,Khác
+785,01,Quản lý tài nguyên và môi trường
+785,02,Dịch vụ an toàn lao động và vệ sinh công nghiệp
+785,90,Khác
+786,01,An ninh và trật tự xã hội
+786,02,Quân sự
+786,90,Khác
+790,01,Khác

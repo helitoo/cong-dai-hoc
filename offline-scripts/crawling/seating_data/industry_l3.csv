@@ -1,0 +1,458 @@
+industry_l1_id,industry_l2_id,id,name
+731,6,99,Kinh doanh thương mại Hàn Quốc
+731,3,99,Giới và Phát triển
+785,1,99,Quản lý biển
+772,6,99,Khúc xạ nhãn khoa
+758,1,99,Thiết kế đô thị
+752,1,99,Kỹ thuật robot
+785,1,98,Quản lý tài nguyên nước
+744,2,98,Biến đổi khí hậu và Phát triển bền vững
+772,4,97,Dinh dưỡng và Khoa học thực phẩm
+731,6,90,Hoa kỳ học
+790,1,89,Quản trị và An ninh
+714,2,49,Sư phạm Lịch sử - Địa lý
+714,2,48,Giáo dục pháp luật
+714,2,47,Sư phạm Khoa học tự nhiên
+714,2,46,Sư phạm công nghệ
+714,2,45,Sư phạm nghệ thuật
+722,90,45,Gia đình học
+721,2,44,Huấn luyện múa
+721,2,43,Biên đạo múa
+721,2,42,Diễn viên múa
+722,90,42,Quản lý văn hóa
+752,1,41,Công nghệ ô tô điện
+721,2,41,Lý luận lịch sử và phê bình múa
+722,90,40,Văn hóa học
+752,1,39,Kỹ thuật hệ thống công nghiệp và Logicstics
+752,1,38,Kỹ thuật hàng hải
+752,1,37,Kỹ thuật in
+714,2,37,Sư phạm Tiếng Hàn Quốc
+714,2,36,Sư phạm Tiếng Nhật
+721,2,36,Quay phim
+714,2,35,Sư phạm Tiếng Đức
+721,2,35,Đạo diễn điện ảnh truyền hình
+714,2,34,Sư phạm Tiếng Trung Quốc
+721,2,34,Diễn viên kịch điện ảnh - truyền hình
+714,2,33,Sư phạm Tiếng Pháp
+786,2,33,Chỉ huy kỹ thuật tác chiến điện tử
+721,2,33,Biên kịch điện ảnh truyền hình
+714,2,32,Sư phạm Tiếng Nga
+786,2,32,Chỉ huy kỹ thuật hải quân
+786,2,31,Trinh sát kỹ thuật
+714,2,31,Sư phạm Tiếng Anh
+721,2,31,Lý luận lịch sử và phê bình điện ảnh truyền hình
+731,6,30,Việt Nam học
+714,2,30,Sư phạm Tiếng Xêđăng
+722,90,30,Văn học
+752,1,30,Kỹ thuật ô tô
+734,1,29,Quản trị kinh doanh thực phẩm
+786,2,29,Chỉ huy kỹ thuật hóa học
+744,2,29,Quản lý phân tích dữ liệu khoa học trái đất
+714,2,29,Sư phạm Tiếng M'nông
+786,2,28,Chỉ huy kỹ thuật công binh
+744,2,28,Hải dương học
+714,2,28,Sư phạm Tiếng Chăm
+714,2,27,Sư phạm Tiếng H'mong
+786,2,27,Chỉ huy kỹ thuật Tăng - thiết giáp
+721,2,27,Đạo diễn sân khấu
+714,2,26,Sư phạm Tiếng Khmer
+721,2,26,Diễn viên sân khấu kịch hát
+786,2,26,Chỉ huy kỹ thuật Phòng không
+721,2,25,Biên kịch sân khấu
+734,1,25,Phân tích dữ liệu kinh doanh
+714,2,25,Sư phạm Tiếng Jrai
+744,2,24,Thủy văn học
+714,2,24,Sư phạm Tiếng Êđê
+714,2,23,Sư phạm Tiếng Bana
+734,1,23,Kinh doanh thời trang và dệt may
+744,2,22,Khí tượng và khí hậu học
+714,2,22,Sư phạm Mỹ thuật
+786,2,22,Quân sự cơ sở
+762,1,22,Nông nghiệp thông minh và bền vững
+752,1,22,Kỹ thuật tàu thủy
+744,1,22,Khoa học vật liệu
+734,1,22,Thương mại điện tử
+734,1,21,Kinh doanh thương mại
+721,2,21,Lý luận lịch sử và phê bình sân khấu
+714,2,21,Sư phạm Âm nhạc
+752,1,21,Kỹ thuật không gian
+731,6,20,Đông Nam Á học
+752,2,20,Kỹ thuật thiết kế vi mạch
+786,2,20,Chỉ huy quản lý kỹ thuật
+752,3,20,Kỹ thuật môi trường
+752,1,20,Kỹ thuật hàng không
+734,1,20,Kinh doanh quốc tế
+722,90,20,Ngôn ngữ học
+752,2,19,Hệ thống giao thông thông minh
+786,2,19,Chỉ huy tham mưu thông tin
+762,1,19,Kinh doanh và khởi nghiệp nông thôn
+714,2,19,Sư phạm Địa lý
+786,2,18,Hậu cần quân sự
+752,1,18,Kỹ thuật hệ thống công nghiệp
+714,2,18,Sư phạm Lịch sử
+748,1,18,Hệ thống nhúng và IoT
+762,1,18,Nông nghiệp công nghệ cao
+744,2,17,Địa lý tự nhiên
+786,2,17,Tình báo quân sự
+714,2,17,Sư phạm Ngữ văn
+746,1,17,Toán tin
+752,1,17,Kỹ thuật công nghiệp
+786,1,17,Tình báo an ninh
+762,1,16,Phát triển nông thôn
+752,1,16,Kỹ thuật cơ khí động lực
+752,2,16,Kỹ thuật điều khiển và tự động hóa
+734,1,16,Bất động sản
+786,1,16,Hậu cần công an nhân dân
+746,1,15,Toán cơ
+762,1,15,Kinh tế nông nghiệp
+734,1,15,Marketing
+714,2,15,Sư phạm Kỹ thuật nông nghiệp
+752,1,15,Kỹ thuật nhiệt
+772,1,15,Y học cổ truyền
+714,1,14,Quản lý giáo dục
+722,2,14,Ngôn ngữ Thái Lan
+786,1,14,An ninh mạng và phòng chống tội phạm công nghệ cao
+731,6,14,Hàn Quốc học
+714,2,14,Sư phạm Kỹ thuật công nghiệp
+752,1,14,Kỹ thuật cơ điện tử
+734,1,14,Digital Marketing
+786,2,14,Biên phòng
+762,1,14,Kinh doanh nông nghiệp
+714,2,13,Sư phạm Sinh học
+731,1,13,Kinh tế thể thao
+721,2,13,Nghệ thuật học
+786,1,13,Phòng cháy chữa cháy và cứu nạn cứu hộ
+751,2,13,Thiết kế cơ khí và kiểu dáng công nghiệp
+758,2,13,Kỹ thuật cấp thoát nước
+762,1,13,Công nghệ rau hoa quả và cảnh quan
+722,1,13,Ngôn ngữ và Văn hóa các dân tộc thiểu số Việt Nam
+731,6,13,Nhật Bản học
+752,3,12,Kỹ thuật dệt
+751,2,12,Công nghệ ô tô
+722,1,12,Văn hóa các dân tộc thiểu số Việt Nam
+786,1,12,Tham mưu chỉ huy công an nhân dân
+722,2,12,Văn hóa và truyền thông xuyên quốc gia
+731,6,12,Trung Quốc học
+762,1,12,Bảo vệ thực vật
+758,2,12,Kỹ thuật tài nguyên nước
+734,4,12,Quản trị sự kiện
+758,1,12,Đô thị học
+744,1,12,Hóa học
+744,2,12,Bản đồ học
+714,2,12,Sư phạm Hóa học
+746,1,12,Toán ứng dụng
+752,2,12,Kỹ thuật y sinh
+751,2,11,Bảo dưỡng công nghiệp
+758,2,11,Địa kỹ thuật xây dựng
+731,1,11,Nghiên cứu phát triển
+722,2,11,Ngôn ngữ Ả Rập
+762,2,11,Quản lý tài nguyên rừng
+714,2,11,Sư phạm Vật lý
+786,1,11,Thi hành án hình sự và hỗ trợ tư pháp
+732,1,11,Truyền thông số
+758,1,11,Bảo tồn di sản kiến trúc - Đô thị
+734,4,10,Quản trị công nghệ truyền thông
+758,2,10,Kỹ thuật cơ sở hạ tầng
+744,1,10,Cơ học
+714,2,10,Sư phạm Tin học
+738,1,10,Luật kinh doanh
+781,90,10,Khoa học chế biến món ăn
+784,1,10,Quản lý và vận hành hạ tầng
+721,1,10,Mỹ thuật đô thị
+732,1,10,Quảng cáo
+786,1,10,Quản lý trật tự an toàn giao thông
+722,90,10,Lịch sử
+722,2,10,Ngôn ngữ Hàn Quốc
+772,1,10,Y học dự phòng
+721,2,10,Biểu diễn nhạc cụ truyền thống
+752,3,10,Kỹ thuật vật liệu kim loại
+762,1,10,Khoa học cây trồng
+722,1,10,Sáng tác văn học
+722,2,9,Ngôn ngữ Nhật
+714,2,9,Sư phạm Toán học
+752,3,9,Kỹ thuật vật liệu
+738,1,9,Luật thương mại quốc tế
+781,90,9,Khoa học dinh dưỡng và ẩm thực
+734,4,9,Quản lý dự án
+762,1,9,Nông học
+786,1,9,Quản lý nhà nước về an ninh trật tự
+721,4,9,Thiết kế mỹ thuật số
+751,2,9,Robot và trí tuệ nhân tạo
+722,90,9,Tôn giáo học
+721,2,9,Nhạc Jazz
+732,1,9,Truyền thông doanh nghiệp
+731,1,9,Kinh tế số
+754,2,9,Công nghệ may
+722,1,8,Ngôn ngữ Chăm
+732,1,8,Quan hệ công chúng
+714,2,8,Giáo dục Quốc phòng - An ninh
+731,1,8,Toán kinh tế
+734,1,8,Quản lí
+786,1,8,Kỹ thuật hình sự
+722,90,8,Chủ nghĩa xã hội khoa học
+722,2,8,Ngôn ngữ Italia
+734,4,8,Quan hệ lao động
+738,1,8,Luật quốc tế
+758,1,8,Thiết kế nội thất
+721,4,8,Nghệ thuật số
+751,2,8,Năng lượng tái tạo
+746,1,8,Khoa học dữ liệu
+721,2,8,Piano
+748,1,8,Công nghệ kỹ thuật máy tính
+752,2,8,Công nghệ Inernet vạn vật (IoT)
+731,6,8,Đông phương học
+721,2,7,Biểu diễn nhạc cụ phương tây
+732,1,7,Truyền thông quốc tế
+734,2,7,Bảo hiểm - Tài chính
+748,1,7,Trí tuệ nhân tạo
+746,1,7,Khoa học tính toán
+731,1,7,Thống kê kinh tế
+785,90,7,Cảnh quan và kỹ thuật hoa viên
+752,2,7,Kỹ thuật điện tử - viễn thông
+722,1,7,Ngôn ngữ H'mong
+721,1,7,Gốm
+751,2,7,Công nghệ kỹ thuật tàu thủy
+731,6,7,Thái Bình Dương học
+786,1,7,Kỹ thuật Công an nhân dân
+786,2,7,Chỉ huy tham mưu Đặc công
+722,2,7,Ngôn ngữ Bồ Đào Nha
+751,4,7,Công nghệ kỹ thuật hạt nhân
+714,2,7,Huấn luyện thể thao
+738,1,7,Luật kinh tế
+742,2,7,Công nghệ thẩm mỹ
+752,6,7,Kỹ thuật tuyển khoáng
+751,90,7,Công nghệ kỹ thuật năng lượng tái tạo
+744,1,6,Vật lý nguyên tử và hạt nhân
+752,6,6,Công nghệ số trong thăm dò và khai thác tài nguyên thiên
+722,2,6,Ngôn ngữ Tây Ban Nha
+734,4,6,Quản trị văn phòng
+714,2,6,Giáo dục Thể chất
+751,1,6,Hệ thống kỹ thuật công trình xây dựng
+722,1,6,Ngôn ngữ Khmer
+786,2,6,Chỉ huy tham mưu Tăng - thiết giáp
+721,4,6,Thiết kế mỹ thuật sân khấu điện ảnh
+784,1,6,Khoa học hàng hải
+734,2,6,Tài chính quốc tế
+731,1,6,Kinh tế quốc tế
+732,1,6,Công nghệ truyền thông
+751,2,6,Công nghệ kỹ thuật nhiệt
+748,1,6,Kỹ thuật máy tính
+731,2,6,Quan hệ quốc tế
+752,2,6,Kỹ thuật biển
+751,4,6,Công nghệ kỹ thuật môi trường
+748,2,6,Địa tin học
+758,1,6,Quản lý đô thị và công trình
+754,2,6,Công nghệ da giày
+754,1,6,Đảm bảo chất lượng và an toàn thực phẩm
+734,2,5,Công nghệ tài chính
+714,2,5,Giáo dục Chính trị
+721,1,5,Điêu khắc
+721,2,5,Thanh nhạc
+722,1,5,Ngôn ngữ Jrai
+722,2,5,Ngôn ngữ Đức
+731,1,5,Kinh tế phát triển
+731,2,5,Quản lý nhà nước
+732,1,5,Truyền thông đại chúng
+732,2,5,Quản lý thông tin
+732,3,5,Bảo tàng học
+734,4,5,Hệ thống thông tin quản lý
+742,2,5,Công nghệ sinh học y dược
+751,1,5,Công nghệ kỹ thuật vật liệu xây dựng
+751,2,5,Công nghệ kỹ thuật ô tô
+751,6,5,Logistics và Quản lý chuỗi cung ứng
+752,2,5,Kỹ thuật thủy âm
+752,5,5,Đá quý Đá mỹ nghệ
+752,6,5,Kỹ thuật khí thiên nhiên
+754,1,5,Công nghệ chế biến thủy sản
+758,1,5,Quy hoạch vùng và đô thị
+758,2,5,Kỹ thuật xây dựng công trình giao thông
+762,1,5,Chăn nuôi
+762,2,5,Lâm sinh
+762,3,5,Quản lý thủy sản
+785,1,5,"Quản lý an toàn, sức khỏe và môi trường"
+786,2,5,Chỉ huy tham mưu Pháo binh
+721,4,4,Thiết kế thời trang
+752,6,4,Kỹ thuật dầu khí
+731,1,4,Kinh tế đầu tư
+751,6,4,Kinh tế công nghiệp
+786,1,4,Điều tra hình sự
+732,1,4,Truyền thông đa phương tiện
+748,2,4,Khoa học và Kỹ thuật máy tính
+754,1,4,Công nghệ sau thu hoạch
+714,2,4,Giáo dục Công dân
+742,2,4,Khoa học Y Sinh
+786,2,4,Chỉ huy tham mưu Phòng không
+721,2,4,Chỉ huy âm nhạc
+754,2,4,Công nghệ dệt may
+722,1,4,Hán Nôm
+751,1,4,Công nghệ kỹ thuật giao thông
+762,3,4,Khai thác thủy sản
+752,2,4,Kỹ thuật rađa - dẫn đường
+734,2,4,Bảo hiểm
+721,1,4,Đồ họa
+748,1,4,Hệ thống thông tin
+758,1,4,Kiến trúc đô thị
+758,2,4,Xây dựng công trình ngắm thành phố và Hệ thống tàu điện
+734,4,4,Quản trị nhân lực
+784,1,4,Kinh tế vận tải
+738,1,4,Luật hình sự và tố tụng hình sự
+722,2,4,Ngôn ngữ Trung Quốc
+754,2,3,Công nghệ vật liệu dệt may
+742,2,3,Sinh học ứng dụng
+751,4,3,Công nghệ kỹ thuật năng lượng
+751,3,3,Công nghệ kỹ thuật điều khiển và tự động hóa
+785,1,3,Quản lý đất đai
+758,1,3,Kiến trúc nội thất
+714,2,3,Giáo dục Đặc biệt
+731,4,3,Tâm lý học giáo dục
+752,1,3,Kỹ thuật cơ khí
+738,1,3,Luật dân sự và tố tụng dân sự
+781,1,3,Quản trị dịch vụ du lịch và lữ hành
+721,2,3,Sáng tác âm nhạc
+758,2,3,Kỹ thuật xây dựng công trình biển
+776,1,3,Hỗ trợ giáo dục người khuyết tật
+772,6,3,Kỹ thuật Phục hồi chức năng
+734,4,3,Quản lý công
+772,2,3,Hóa dược
+762,1,3,Khoa học đất
+748,1,3,Kỹ thuật phần mềm
+751,90,3,Công nghệ kỹ thuật khuông mẫu
+762,3,3,Khoa học thủy sản
+732,3,3,Lưu trữ học
+790,1,3,Quản trị Nhân lực và Nhân tài
+721,3,3,Thiết kế âm thanh ánh sáng
+721,4,3,Thiết kế đồ họa
+714,1,3,Công nghệ giáo dục
+786,2,3,Chỉ huy tham mưu Không quân
+752,4,3,Vật lý y khoa
+722,2,3,Ngôn ngữ Pháp
+751,1,3,Công nghệ kỹ thuật xây dựng
+752,5,3,Kỹ thuật trắc địa - bản đồ
+721,1,3,Hội họa
+751,2,3,Công nghệ kỹ thuật cơ điện tử
+786,1,3,Trinh sát kỹ thuật
+748,2,3,Kỹ thuật dữ liệu
+731,3,2,Nhân học
+751,3,2,Công nghệ kỹ thuật điện tử - viễn thông
+751,2,2,Công nghệ chế tạo máy
+751,1,2,Công nghệ kỹ thuật công trình xây dựng
+748,2,2,An toàn thông tin
+748,1,2,Mạng máy tính và truyền thông dữ liệu
+752,4,2,Kỹ thuật hạt nhân
+752,5,2,Kỹ thuật địa vật lý
+752,6,2,Kỹ thuật thăm dò và khảo sát
+744,1,2,Vật lý học
+754,1,2,Kỹ thuật thực phẩm
+754,2,2,Công nghệ sợi dệt
+742,2,2,Kỹ thuật sinh học
+754,90,2,Kỹ nghệ gỗ và nội thất
+758,1,2,Kiến trúc cảnh quan
+738,1,2,Luật hiến pháp và luật hành chính
+758,2,2,Kỹ thuật xây dựng công trình thủy
+758,3,2,Quản lý xây dựng
+762,1,2,Khuyến nông
+790,1,2,Marketing và Truyền thông
+734,3,2,Kiểm toán
+734,1,2,Quản trị - Luật
+732,4,2,Kinh doanh xuất bản phẩm
+762,2,2,Lâm nghiệp đô thị
+762,3,2,Bệnh học thủy sản
+714,2,2,Giáo dục Tiểu học
+772,3,2,Hộ sinh
+772,5,2,Kỹ thuật phục hình răng
+772,6,2,Kỹ thuật hình ảnh y học
+731,6,2,Châu Á học
+772,8,2,Quản lý bệnh viện
+776,1,2,Công tác thanh thiếu niên
+781,2,2,Quản trị nhà hàng và dịch vụ ăn uống
+781,3,2,Huấn luyện thể thao
+784,1,2,Quản lý hoạt động bay
+785,1,2,Kinh tế tài nguyên thiên nhiên
+785,2,2,"An toàn, Vệ sinh lao động"
+785,90,2,Tài nguyên và du lịch sinh thái
+731,2,2,Xây dựng Đảng và chính quyền nhà nước
+786,1,2,Trinh sát cảnh sát
+731,1,2,Kinh tế chính trị
+722,2,2,Ngôn ngữ Nga
+786,2,2,Chỉ huy tham mưu Hải quân
+721,4,2,Thiết kế công nghiệp
+721,3,2,Công nghệ điện ảnh truyền hình
+751,6,2,Quản lý năng lượng
+751,4,2,Công nghệ vật liệu
+746,2,1,Thống kê
+752,3,1,Kỹ thuật hóa học
+738,1,1,Luật
+751,4,1,Công nghệ kỹ thuật hóa học
+772,7,1,Y tế công cộng
+772,8,1,Tổ chức và Quản lý y tế
+748,1,1,Khoa học máy tính
+772,90,1,Y sinh học thể dục thể thao
+776,1,1,Công tác xã hội
+752,1,1,Cơ kỹ thuật
+790,1,1,Quản trị Doanh nghiệp và Công nghệ
+781,1,1,Du lịch
+758,2,1,Kỹ thuật xây dựng
+781,2,1,Quản trị khách sạn
+721,3,1,Nhiếp ảnh
+781,3,1,Quản lý thể dục thể thao
+772,5,1,Răng - Hàm - Mặt
+772,6,1,Kỹ thuật xét nghiệm y học
+781,5,1,Kinh tế gia đình
+781,90,1,Khoa học chế biến món ăn
+731,6,1,Quốc tế học
+731,5,1,Địa lý học
+784,1,1,Khai thác vận tải
+748,2,1,Công nghệ thông tin
+742,1,1,Sinh học
+742,2,1,Công nghệ sinh học
+731,4,1,Tâm lý học
+785,1,1,Quản lý tài nguyên và môi trường
+752,2,1,Kỹ thuật điện
+758,1,1,Kiến trúc
+714,2,1,Giáo dục Mầm non
+754,90,1,Công nghệ chế biến lâm sản
+731,3,1,Xã hội học
+785,2,1,Bảo hộ lao động
+751,6,1,Quản lý công nghiệp
+751,3,1,Công nghệ kỹ thuật điện điện tử
+751,1,1,Công nghệ kỹ thuật kiến trúc
+786,1,1,Trinh sát an ninh
+721,2,1,Âm nhạc học
+754,1,1,Công nghệ thực phẩm
+744,1,1,Thiên văn học
+731,2,1,Chính trị học
+721,1,1,Lý luận lịch sử và phê bình mỹ thuật
+751,7,1,Công nghệ dầu khí và khai thác dầu
+731,1,1,Kinh tế
+722,90,1,Triết học
+752,6,1,Kỹ thuật mỏ
+752,5,1,Kỹ thuật địa chất
+751,8,1,Công nghệ kỹ thuật in
+722,2,1,Ngôn ngữ Anh
+752,4,1,Vật lý kỹ thuật
+786,2,1,Chỉ huy tham mưu Lục quân
+734,1,1,Quản trị kinh doanh
+732,90,1,Công nghệ đa phương tiện
+751,2,1,Công nghệ kỹ thuật cơ khí
+732,4,1,Xuất bản
+762,2,1,Lâm học
+744,2,1,Địa chất học
+734,2,1,Tài chính - Ngân hàng
+714,1,1,Giáo dục học
+762,3,1,Nuôi trồng thủy sản
+744,3,1,Khoa học môi trường
+734,3,1,Kế toán
+762,1,1,Nông nghiệp
+746,1,1,Toán học
+764,1,1,Thú y
+772,1,1,Y khoa
+732,2,1,Thông tin - Thư viện
+758,3,1,Kinh tế xây dựng
+772,2,1,Dược học
+734,4,1,Khoa học quản lý
+772,3,1,Điều dưỡng
+722,1,1,Tiếng Việt và văn hóa Việt Nam
+772,4,1,Dinh dưỡng
+732,1,1,Báo chí
+748,2,0,Kỹ thuật - Hậu cần
+786,1,0,Nghiệp vụ an ninh

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "htpv",
+    "name": "Phỏng vấn"
+  },
+  {
+    "id": "uttt",
+    "name": "Ưu tiên xét / Tuyển thẳng"
+  },
+  {
+    "id": "xtkh",
+    "name": "Kết hợp"
+  },
+  {
+    "id": "dgtd",
+    "name": "Đánh giá tư duy"
+  },
+  {
+    "id": "dgsg",
+    "name": "Đánh giá năng lực - ĐHQG-HCM"
+  },
+  {
+    "id": "dghn",
+    "name": "Đánh giá năng lực - ĐHQG-HN"
+  },
+  {
+    "id": "dgcb",
+    "name": "Đánh giá năng lực chuyên biệt - HCMUE"
+  },
+  {
+    "id": "dgsp",
+    "name": "Đánh giá năng lực - HNUE"
+  },
+  {
+    "id": "dgca",
+    "name": "Đánh giá năng lực - Bộ Công an"
+  },
+  {
+    "id": "vsat",
+    "name": "Đánh giá đầu vào Đại học"
+  },
+  {
+    "id": "thpt",
+    "name": "Tốt nghiệp THPT"
+  },
+  {
+    "id": "thhb",
+    "name": "Học bạ THPT"
+  },
+  {
+    "id": "ccqt",
+    "name": "Chứng chỉ quốc tế"
+  }
+]

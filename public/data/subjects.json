@@ -1,0 +1,122 @@
+[
+  {
+    "id": "--",
+    "name": "Không"
+  },
+  {
+    "id": "al",
+    "name": "Tổng hợp"
+  },
+  {
+    "id": "ot",
+    "name": "Khác"
+  },
+  {
+    "id": "to",
+    "name": "Toán"
+  },
+  {
+    "id": "nv",
+    "name": "Ngữ Văn"
+  },
+  {
+    "id": "vl",
+    "name": "Vật lý"
+  },
+  {
+    "id": "hh",
+    "name": "Hóa học"
+  },
+  {
+    "id": "sh",
+    "name": "Sinh học"
+  },
+  {
+    "id": "dl",
+    "name": "Địa lý"
+  },
+  {
+    "id": "ls",
+    "name": "Lịch sử"
+  },
+  {
+    "id": "gd",
+    "name": "Giáo dục kinh tế - pháp luật"
+  },
+  {
+    "id": "c1",
+    "name": "Công nghệ công nghiệp"
+  },
+  {
+    "id": "c2",
+    "name": "Công nghệ nông nghiệp"
+  },
+  {
+    "id": "th",
+    "name": "Tin học"
+  },
+  {
+    "id": "nn",
+    "name": "Ngoại ngữ"
+  },
+  {
+    "id": "an",
+    "name": "Tiếng Anh"
+  },
+  {
+    "id": "ng",
+    "name": "Tiếng Nga"
+  },
+  {
+    "id": "ph",
+    "name": "Tiếng Pháp"
+  },
+  {
+    "id": "tq",
+    "name": "Tiếng Trung Quốc"
+  },
+  {
+    "id": "nh",
+    "name": "Tiếng Nhật"
+  },
+  {
+    "id": "ha",
+    "name": "Tiếng Hàn"
+  },
+  {
+    "id": "du",
+    "name": "Tiếng Đức"
+  },
+  {
+    "id": "ve",
+    "name": "Năng khiếu hội họa"
+  },
+  {
+    "id": "am",
+    "name": "Năng khiếu âm nhạc"
+  },
+  {
+    "id": "bd",
+    "name": "Năng khiếu biểu diễn"
+  },
+  {
+    "id": "qp",
+    "name": "Năng khiếu quay phim truyền hình"
+  },
+  {
+    "id": "td",
+    "name": "Năng khiếu thể dục - thể thao"
+  },
+  {
+    "id": "nk",
+    "name": "Năng khiếu khác"
+  },
+  {
+    "id": "cn",
+    "name": "Công nghệ"
+  },
+  {
+    "id": "bc",
+    "name": "Năng khiếu báo chí"
+  }
+]
