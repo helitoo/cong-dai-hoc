@@ -2,7 +2,7 @@ import { ChartArea } from "lucide-react";
 
 import Quote from "@/components/quote";
 
-import DistForm from "@/app/topic/ptn-pho-diem/dist-form";
+import DistForm from "@/app/topic/(labs)/ptn-pho-diem/dist-form";
 
 export default function Page() {
   return (

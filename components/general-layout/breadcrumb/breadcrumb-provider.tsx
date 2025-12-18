@@ -15,6 +15,7 @@ const ignoreSegs = ["auth", "topic", "user"];
 const crumbMap: Record<string, string> = {
   "dang-nhap": "Đăng nhập",
   "dang-ky": "Đăng ký",
+  "huong-dan": "Hướng dẫn",
   "trac-nghiem-tinh-cach": "Trắc nghiệm tính cách",
   "tinh-diem": "Tính điểm",
   "tk-nganh-truong": "TK Ngành-Trường",

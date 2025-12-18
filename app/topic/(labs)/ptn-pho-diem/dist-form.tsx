@@ -14,9 +14,9 @@ import {
   type Dist,
 } from "@/lib/universities/convertors/exam-distributions";
 
-import CombinedDistForm from "@/app/topic/ptn-pho-diem/combined-dist-form";
-import ExamDistForm from "@/app/topic/ptn-pho-diem/exam-dist-form";
-import DistStatisticsTable from "@/app/topic/ptn-pho-diem/dist-statistics-table";
+import CombinedDistForm from "@/app/topic/(labs)/ptn-pho-diem/combined-dist-form";
+import ExamDistForm from "@/app/topic/(labs)/ptn-pho-diem/exam-dist-form";
+import DistStatisticsTable from "@/app/topic/(labs)/ptn-pho-diem/dist-statistics-table";
 
 // Main component function
 export default function DistForm() {

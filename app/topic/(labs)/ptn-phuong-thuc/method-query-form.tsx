@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { select } from "@/lib/duckdb/duckdb";
 
-import MethodSelector from "@/app/topic/ptn-phuong-thuc/method-selector";
+import MethodSelector from "@/app/topic/(labs)/ptn-phuong-thuc/method-selector";
 
 import { BarChart } from "@/components/charts/bar-charts";
 import showToast from "@/components/toastify-wrapper";

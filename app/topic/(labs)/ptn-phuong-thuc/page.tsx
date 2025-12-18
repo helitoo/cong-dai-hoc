@@ -2,7 +2,7 @@ import { DoorOpen } from "lucide-react";
 
 import Quote from "@/components/quote";
 
-import MethodQueryForm from "@/app/topic/ptn-phuong-thuc/method-query-form";
+import MethodQueryForm from "@/app/topic/(labs)/ptn-phuong-thuc/method-query-form";
 
 export default function Page() {
   return (
