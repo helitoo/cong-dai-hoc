@@ -62,34 +62,6 @@ const sidebarItems: sidebarType = [
   },
   {
     trigger: {
-      icon: <Notebook />,
-      linkElm: <>Chủ đề</>,
-    },
-    content: [
-      {
-        icon: <MonitorCog />,
-        linkElm: <Link href="#">Hệ thống</Link>,
-      },
-      {
-        icon: <GraduationCap />,
-        linkElm: <Link href="#">Tin Tuyển sinh</Link>,
-      },
-      {
-        icon: <Backpack />,
-        linkElm: <Link href="#">Tin Sinh viên</Link>,
-      },
-      {
-        icon: <Lightbulb />,
-        linkElm: <Link href="#">Kiến thức</Link>,
-      },
-      {
-        icon: <CircleEllipsis />,
-        linkElm: <Link href="#">Khác</Link>,
-      },
-    ],
-  },
-  {
-    trigger: {
       icon: <PencilRuler />,
       linkElm: <>Tính toán</>,
     },
@@ -135,6 +107,34 @@ const sidebarItems: sidebarType = [
     ],
   },
   {
+    trigger: {
+      icon: <Notebook />,
+      linkElm: <>Chủ đề</>,
+    },
+    content: [
+      {
+        icon: <MonitorCog />,
+        linkElm: <Link href="#">Hệ thống</Link>,
+      },
+      {
+        icon: <GraduationCap />,
+        linkElm: <Link href="#">Tin Tuyển sinh</Link>,
+      },
+      {
+        icon: <Backpack />,
+        linkElm: <Link href="#">Tin Sinh viên</Link>,
+      },
+      {
+        icon: <Lightbulb />,
+        linkElm: <Link href="#">Kiến thức</Link>,
+      },
+      {
+        icon: <CircleEllipsis />,
+        linkElm: <Link href="#">Khác</Link>,
+      },
+    ],
+  },
+  {
     icon: <UsersRound />,
     linkElm: <Link href="#">Thành viên</Link>,
   },
@@ -148,7 +148,7 @@ export default function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="gap-0! my-0! py-0!">
               {sidebarItems.map((item, index) => {
                 // If is collapsibleItem
                 if ("trigger" in item) {
@@ -166,7 +166,7 @@ export default function AppSidebar() {
                     <Collapsible
                       key={index}
                       defaultOpen
-                      className="group/collapsible mt-2!"
+                      className="group/collapsible"
                     >
                       <SidebarMenuItem>
                         <CollapsibleTrigger asChild>
@@ -178,12 +178,9 @@ export default function AppSidebar() {
 
                         {filteredContent.length > 0 && (
                           <CollapsibleContent>
-                            <SidebarMenuSub className="gap-0!">
+                            <SidebarMenuSub className="gap-0! my-0! py-0!">
                               {filteredContent.map((subItem, subIndex) => (
-                                <SidebarMenuSubItem
-                                  key={subIndex}
-                                  className="mt-0! mb-0!"
-                                >
+                                <SidebarMenuSubItem key={subIndex}>
                                   <SidebarMenuButton>
                                     {subItem.icon}
                                     {subItem.linkElm}
@@ -203,7 +200,7 @@ export default function AppSidebar() {
                 // if (item.isPrivate && !isAuthed) return null;
 
                 return (
-                  <SidebarMenuItem key={index} className="mt-2!">
+                  <SidebarMenuItem key={index} className="mt-1!">
                     <SidebarMenuButton>
                       {item.icon}
                       {item.linkElm}

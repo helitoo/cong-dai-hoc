@@ -145,7 +145,7 @@ export default function LandingPage() {
       {/* ================= SECTION 6 ================= */}
       <section className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-[28px] md:text-[36px] xl:text-[44px] font-semibold text-sky-500">
+          <h2 className="text-[28px] md:text-[36px] xl:text-[44px] font-montserrat font-bold text-sky-500">
             Hãy tự khám phá phần còn lại!
           </h2>
 
