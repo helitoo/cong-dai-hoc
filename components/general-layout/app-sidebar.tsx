@@ -106,38 +106,38 @@ const sidebarItems: sidebarType = [
       },
     ],
   },
-  {
-    trigger: {
-      icon: <Notebook />,
-      linkElm: <>Chủ đề</>,
-    },
-    content: [
-      {
-        icon: <MonitorCog />,
-        linkElm: <Link href="#">Hệ thống</Link>,
-      },
-      {
-        icon: <GraduationCap />,
-        linkElm: <Link href="#">Tin Tuyển sinh</Link>,
-      },
-      {
-        icon: <Backpack />,
-        linkElm: <Link href="#">Tin Sinh viên</Link>,
-      },
-      {
-        icon: <Lightbulb />,
-        linkElm: <Link href="#">Kiến thức</Link>,
-      },
-      {
-        icon: <CircleEllipsis />,
-        linkElm: <Link href="#">Khác</Link>,
-      },
-    ],
-  },
-  {
-    icon: <UsersRound />,
-    linkElm: <Link href="#">Thành viên</Link>,
-  },
+  // {
+  //   trigger: {
+  //     icon: <Notebook />,
+  //     linkElm: <>Chủ đề</>,
+  //   },
+  //   content: [
+  //     {
+  //       icon: <MonitorCog />,
+  //       linkElm: <Link href="#">Hệ thống</Link>,
+  //     },
+  //     {
+  //       icon: <GraduationCap />,
+  //       linkElm: <Link href="#">Tin Tuyển sinh</Link>,
+  //     },
+  //     {
+  //       icon: <Backpack />,
+  //       linkElm: <Link href="#">Tin Sinh viên</Link>,
+  //     },
+  //     {
+  //       icon: <Lightbulb />,
+  //       linkElm: <Link href="#">Kiến thức</Link>,
+  //     },
+  //     {
+  //       icon: <CircleEllipsis />,
+  //       linkElm: <Link href="#">Khác</Link>,
+  //     },
+  //   ],
+  // },
+  // {
+  //   icon: <UsersRound />,
+  //   linkElm: <Link href="#">Thành viên</Link>,
+  // },
 ];
 
 export default function AppSidebar() {

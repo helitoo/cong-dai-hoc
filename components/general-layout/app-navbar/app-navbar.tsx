@@ -30,7 +30,7 @@ export default async function AppNavbar() {
       <div className="flex items-center gap-2">
         <ModeToggle />
 
-        {isAuthed ? <ProfileDropdown /> : <SigninSignupDirection />}
+        {/* {isAuthed ? <ProfileDropdown /> : <SigninSignupDirection />} */}
 
         <SidebarTrigger />
       </div>
