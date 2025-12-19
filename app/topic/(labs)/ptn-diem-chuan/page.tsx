@@ -58,7 +58,7 @@ export default function Page() {
                 Lab hỗ trợ sẵn filter và sort theo các cột sau khi truy vấn.
               </li>
               <li className="ml-5">
-                Nếu bạn muốn raw data, có thể xem tại repository.
+                Nếu bạn muốn dataset, có thể xem tại repository hoặc Kaggle.
               </li>
             </ul>
           </Quote>
