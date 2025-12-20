@@ -10,7 +10,7 @@ import { useLoading } from "@/components/loading";
 import { PasswordInput } from "@/components/password-input";
 import showToast from "@/components/toastify-wrapper";
 
-import { signIn } from "@/app/auth/auth-handler/auth-handler";
+import { signIn } from "@/app/auth/auth-handler/signin";
 
 function InputForm({
   name,

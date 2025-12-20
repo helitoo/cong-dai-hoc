@@ -36,3 +36,8 @@ export type Metadata = {
     | undefined;
   avt_msg: string;
 };
+
+export type AuthRes = {
+  code: "success" | "error";
+  msg: string | undefined;
+};

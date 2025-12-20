@@ -11,7 +11,7 @@ import SigninSignupDirection from "@/components/general-layout/app-navbar/signin
 import AppBreadcrumb from "@/components/general-layout/breadcrumb/app-breadcrumb";
 import { ModeToggle } from "@/components/mode-toggle";
 
-import { getMetadata } from "@/app/auth/auth-handler/auth-handler";
+import { getMetadata } from "@/app/auth/auth-handler/metadata-manager";
 import type { Metadata } from "@/app/auth/auth-handler/auth-type";
 
 export default function AppNavbar() {

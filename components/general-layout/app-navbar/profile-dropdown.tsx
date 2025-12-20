@@ -15,7 +15,7 @@ import {
 import { useLoading } from "@/components/loading";
 import showToast from "@/components/toastify-wrapper";
 
-import { signOut } from "@/app/auth/auth-handler/auth-handler";
+import { signOut } from "@/app/auth/auth-handler/signup";
 import { Metadata } from "@/app/auth/auth-handler/auth-type";
 
 export default function ProfileDropdown({

@@ -19,7 +19,7 @@ import { useLoading } from "@/components/loading";
 import { PasswordInput } from "@/components/password-input";
 import showToast from "@/components/toastify-wrapper";
 
-import { signUp } from "@/app/auth/auth-handler/auth-handler";
+import { signUpWithMauGuard } from "@/app/auth/auth-handler/signup";
 import { EmailSchema, PasswordSchema } from "@/app/auth/auth-handler/auth-type";
 
 const SignUpSchema = z.object({
@@ -48,7 +48,10 @@ export default function SignupForm() {
 
     console.log(credentials);
 
-    const res = await signUp(credentials.email, credentials.password);
+    const res = await signUpWithMauGuard(
+      credentials.email,
+      credentials.password
+    );
 
     if (res.code === "success")
       showToast({
