@@ -1,4 +1,4 @@
-import SignupForm from "@/app/auth/dang-xuat/signup-form";
+import SignupForm from "@/app/auth/dang-ky/signup-form";
 import { checkAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 

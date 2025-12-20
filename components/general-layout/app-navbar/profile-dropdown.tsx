@@ -1,15 +1,8 @@
 "use client";
 
-import { signout } from "@/lib/routes";
-import { getMetadata, defaultMetadata } from "@/lib/localStorage/metadata";
-import type { Metadata } from "@/lib/types/profile/profile";
-
 import Avatar from "boring-avatars";
 
-import { useState, useEffect } from "react";
-
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 import {
   DropdownMenu,
@@ -19,32 +12,44 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import { useLoading } from "@/components/loading";
+import showToast from "@/components/toastify-wrapper";
 
-export default function ProfileDropdown() {
-  // Router init
+import { signOut } from "@/app/auth/auth-handler/auth-handler";
+import { Metadata } from "@/app/auth/auth-handler/auth-type";
 
-  const router = useRouter();
+export default function ProfileDropdown({
+  auid,
+  avt_variant,
+  avt_msg,
+}: Metadata) {
+  const { showLoading, hideLoading } = useLoading();
 
-  // Metadata
+  async function signOutHandler() {
+    showLoading();
 
-  const [metadata, setMetadata] = useState<Metadata>(defaultMetadata);
+    const error = await signOut();
 
-  useEffect(() => {
-    setMetadata(getMetadata());
-  }, []);
+    if (error) {
+      showToast({ type: "error", message: error.message });
+      showToast({ type: "error", message: "Lỗi! Hãy thử lại!" });
+    }
+
+    hideLoading();
+  }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Avatar
-          name={metadata.avatar.message}
-          variant={metadata.avatar.variant}
+          name={avt_msg}
+          variant={avt_variant}
           className="size-5 button"
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel className="button">
-          <Link href={`/user/${metadata.id}/profile`}>Trang cá nhân</Link>
+          <Link href={`/user/${auid}/profile`}>Trang cá nhân</Link>
         </DropdownMenuLabel>
 
         <DropdownMenuSeparator />
@@ -61,21 +66,10 @@ export default function ProfileDropdown() {
         <DropdownMenuItem className="button">
           <Link href="#">Bài viết yêu thích</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="button">
-          <Link href="#">Bình luận yêu thích</Link>
-        </DropdownMenuItem>
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem
-          onClick={async () => {
-            await signout();
-            window.location.reload();
-            router.push("/");
-          }}
-        >
-          Đăng xuất
-        </DropdownMenuItem>
+        <DropdownMenuItem onClick={signOutHandler}>Đăng xuất</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

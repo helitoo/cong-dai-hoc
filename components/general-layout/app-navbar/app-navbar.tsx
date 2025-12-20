@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+
+import { useEffect, useState } from "react";
 
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -7,10 +11,18 @@ import SigninSignupDirection from "@/components/general-layout/app-navbar/signin
 import AppBreadcrumb from "@/components/general-layout/breadcrumb/app-breadcrumb";
 import { ModeToggle } from "@/components/mode-toggle";
 
-import { checkAuth } from "@/lib/auth";
+import { getMetadata } from "@/app/auth/auth-handler/auth-handler";
+import type { Metadata } from "@/app/auth/auth-handler/auth-type";
 
-export default async function AppNavbar() {
-  const isAuthed = await checkAuth();
+export default function AppNavbar() {
+  const [metadata, setMetadata] = useState<Metadata | undefined>();
+
+  useEffect(() => {
+    (async () => {
+      const temp = await getMetadata();
+      setMetadata(temp);
+    })();
+  }, []);
 
   return (
     <header className="flex justify-between items-center p-2 w-full shadow-md z-10 bg-background sticky top-0">
@@ -30,7 +42,15 @@ export default async function AppNavbar() {
       <div className="flex items-center gap-2">
         <ModeToggle />
 
-        {/* {isAuthed ? <ProfileDropdown /> : <SigninSignupDirection />} */}
+        {metadata ? (
+          <ProfileDropdown
+            auid={metadata.auid}
+            avt_variant={metadata.avt_variant}
+            avt_msg={metadata.avt_msg}
+          />
+        ) : (
+          <SigninSignupDirection />
+        )}
 
         <SidebarTrigger />
       </div>

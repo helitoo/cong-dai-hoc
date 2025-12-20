@@ -1,127 +1,108 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { useBreadcrumb } from "@/components/general-layout/breadcrumb/breadcrumb-provider";
+import { useLoading } from "@/components/loading";
 import { PasswordInput } from "@/components/password-input";
 import showToast from "@/components/toastify-wrapper";
 
-import { useLoading } from "@/components/loading";
-import { setMetadata } from "@/lib/localStorage/metadata";
-import { signin } from "@/lib/routes";
-import {
-  CredentialsValidator,
-  type Credentials,
-} from "@/lib/types/auth/credentials";
-import type { Metadata } from "@/lib/types/profile/profile";
+import { signIn } from "@/app/auth/auth-handler/auth-handler";
 
-// Main signin handler
-// For reuse at signup-form
-export async function signinHandler(credentials: Credentials) {
-  const { payload } = (await signin(credentials)) as { payload: Metadata };
-  setMetadata(payload);
+function InputForm({
+  name,
+  setName,
+  password,
+  setPassword,
+  namePlaceholder,
+}: {
+  name: string;
+  setName: (v: string) => void;
+  password: string;
+  setPassword: (v: string) => void;
+  namePlaceholder: string;
+}) {
+  return (
+    <div className="space-y-2">
+      <Input
+        className="w-full"
+        placeholder={namePlaceholder}
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <div className="w-full">
+        <div className="relative">
+          <PasswordInput onChange={(e) => setPassword(e.target.value)} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-// Component
 export default function SigninForm() {
-  // Breadcrump init
-  const { setBreadcrumb } = useBreadcrumb();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    setBreadcrumb(pathname);
-  }, []);
-
   // Loading init
   const { showLoading, hideLoading } = useLoading();
 
-  // Router init
-  const router = useRouter();
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [type, setType] = useState<"email" | "auid">("auid");
 
-  // Form init
-  const form = useForm<Credentials>({
-    resolver: zodResolver(CredentialsValidator),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  });
+  async function onSubmit() {
+    showLoading();
 
-  // Submit handler
-  async function onSubmit(credentials: Credentials) {
-    console.log("ON SUBMIT");
-    try {
-      showLoading();
-      await signinHandler(credentials);
+    if (!name || !password) {
+      showToast({ type: "error", message: "Chưa điền đủ dữ liệu!" });
       hideLoading();
-      showToast({ type: "success", message: "Chào mừng trở lại!" });
-
-      // Redirect
-      window.location.reload();
-      router.push("/");
-    } catch (err) {
-      hideLoading();
-      showToast({ type: "error", message: "Lỗi đăng nhập!" });
+      return;
     }
+
+    const res = await signIn(name, password, type);
+
+    if (res.code === "error") showToast({ type: "error", message: res.msg });
+    else showToast({ type: "success", message: "Đăng nhập thành công!" });
+
+    hideLoading();
   }
 
-  // Return component
-
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col justify-center items-center space-y-2 w-[50%] md:w-[30%] box"
+    <div className="flex flex-col justify-center items-center space-y-5 w-fit box">
+      <div className="box-title">Đăng nhập</div>
+      <Tabs
+        defaultValue={type}
+        onValueChange={(v) => setType(v as "email" | "auid")}
       >
-        <div className="box-title">Đăng nhập</div>
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem className="w-full">
-              <FormControl>
-                <Input
-                  placeholder="Nhập email / username ..."
-                  type="email"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <TabsList className="bg-transparent">
+          <TabsTrigger value="auid">Đăng nhập bằng ID</TabsTrigger>
+          <TabsTrigger value="email">Đăng nhập bằng email</TabsTrigger>
+        </TabsList>
 
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem className="w-full">
-              <FormControl>
-                <div className="relative">
-                  <PasswordInput {...field} />
-                </div>
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="mt-5 submit-button">
-          OK
-        </Button>
-      </form>
-    </Form>
+        <TabsContent value="auid">
+          <InputForm
+            name={name}
+            setName={setName}
+            password={password}
+            setPassword={setPassword}
+            namePlaceholder="Nhập ID..."
+          ></InputForm>
+        </TabsContent>
+
+        <TabsContent value="email">
+          <InputForm
+            name={name}
+            setName={setName}
+            password={password}
+            setPassword={setPassword}
+            namePlaceholder="Nhập email..."
+          ></InputForm>
+        </TabsContent>
+      </Tabs>
+
+      <Button type="submit" className="submit-button" onClick={onSubmit}>
+        OK
+      </Button>
+    </div>
   );
 }
