@@ -39,7 +39,7 @@ export default function AppNavbar() {
       </div>
 
       {/* Right side */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 pr-2">
         <ModeToggle />
 
         {metadata ? (
