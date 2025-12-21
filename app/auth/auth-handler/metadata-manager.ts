@@ -1,15 +1,15 @@
 import { Metadata } from "@/app/auth/auth-handler/auth-type";
-import { supabaseClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 
 export async function setMetadata(): Promise<Metadata | undefined> {
   let {
     data: { session },
-  } = await supabaseClient.auth.getSession();
+  } = await supabase.auth.getSession();
 
   // Try to retrieve a new session one time
   if (!session) {
     const { data: refreshed, error: refreshError } =
-      await supabaseClient.auth.refreshSession();
+      await supabase.auth.refreshSession();
 
     if (refreshError) return undefined;
     session = refreshed.session;

@@ -1,4 +1,4 @@
-import { supabaseClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 
 import { getAuthErrorMessage } from "@/app/auth/auth-handler/auth-error-msgs";
 import type { AuthRes } from "@/app/auth/auth-handler/auth-type";
@@ -7,7 +7,7 @@ export async function signUp(
   email: string,
   password: string
 ): Promise<AuthRes> {
-  const { data, error } = await supabaseClient.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email: email,
     password: password,
   });
@@ -18,7 +18,7 @@ export async function signUp(
 }
 
 export async function signOut() {
-  const { error } = await supabaseClient.auth.signOut();
+  const { error } = await supabase.auth.signOut();
   return error;
 }
 
@@ -29,7 +29,7 @@ export async function signUpWithMauGuard(
   password: string
 ): Promise<AuthRes> {
   // Get current MAU
-  const { data: mau, error } = await supabaseClient.rpc("get_current_mau");
+  const { data: mau, error } = await supabase.rpc("get_current_mau");
 
   if (error)
     return {
@@ -39,7 +39,7 @@ export async function signUpWithMauGuard(
 
   // If overate, push to queue
   if (mau >= MAU_LIMIT) {
-    await supabaseClient.from("signup_queue").insert({
+    await supabase.from("signup_queue").insert({
       email,
       password,
     });

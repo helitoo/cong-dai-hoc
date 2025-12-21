@@ -1,6 +1,6 @@
 import { getAuthErrorMessage } from "@/app/auth/auth-handler/auth-error-msgs";
 import type { AuthRes } from "@/app/auth/auth-handler/auth-type";
-import { supabaseClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 
 export async function signIn(
   name: string,
@@ -10,7 +10,7 @@ export async function signIn(
   switch (signInType) {
     case "auid": {
       // Look up email
-      const { data: profile, error: profileError } = await supabaseClient
+      const { data: profile, error: profileError } = await supabase
         .from("profile")
         .select("email")
         .eq("auid", name)
@@ -24,7 +24,7 @@ export async function signIn(
 
       // Sign in
       const { data: signInData, error: signInError } =
-        await supabaseClient.auth.signInWithPassword({
+        await supabase.auth.signInWithPassword({
           email: profile.email,
           password,
         });
@@ -42,7 +42,7 @@ export async function signIn(
     }
 
     case "email": {
-      const { data, error } = await supabaseClient.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email: name,
         password,
       });
