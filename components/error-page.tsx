@@ -27,16 +27,39 @@ export default function ErrorPage({
   msg?: string;
 }) {
   return (
-    <>
-      <div className="background-box p-10 md:p-20 flex flex-col">
-        <h1 className="font-bold font-montserrat text-9xl text-sky-500">
+    <div className="background-box p-10 md:p-20 flex flex-col">
+      <div className="relative inline-block">
+        {/* CODE – nổi lên trên */}
+        <h1
+          className="
+        relative
+        font-bold font-montserrat text-9xl
+        bg-linear-to-r from-cyan-300 to-sky-500
+        bg-clip-text text-transparent
+        z-10
+      "
+        >
           {code}
         </h1>
-        <p className="text-3xl tracking-tight font-bold mt-3 mb-1">
+
+        {/* LABEL BOX – phụ thuộc wrapper (div), không phụ thuộc h1 */}
+        <span
+          className="
+        pointer-events-none absolute
+        left-0 right-0
+        top-2/3
+        h-10 py-8 pt-15
+        bg-sky-400/20
+        border-b-2 border-r-2 border-dashed border-sky-500
+        flex items-center
+        text-3xl tracking-tight font-bold
+        text-sky-500
+        z-0
+      "
+        >
           {msg ?? codeMsgMapping?.[code] ?? "Lỗi!"}
-        </p>
-        <div className="w-full h-10 bg-sky-400/50 border-2 border-dashed border-sky-500"></div>
+        </span>
       </div>
-    </>
+    </div>
   );
 }
