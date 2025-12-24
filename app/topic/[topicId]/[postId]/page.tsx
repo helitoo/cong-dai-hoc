@@ -1,14 +1,17 @@
-import { Heart, Link, MessageCircle, Pencil } from "lucide-react";
+import { MessageCircle, Pencil, Eye } from "lucide-react";
+
+import Link from "next/link";
 
 import { createClient } from "@/lib/supabase/client";
 
 import UserAvatar from "@/components/avatar";
 import ErrorPage from "@/components/error-page";
+import { Button } from "@/components/ui/button";
 
-import { fmtDateTime } from "@/app/topic/[topicId]/formatted-date-time";
 import FavoriteToggle from "@/app/topic/[topicId]/[postId]/favorite-toggle";
+import RemovePostTrigger from "@/app/topic/[topicId]/[postId]/remove-post-trigger";
+import { fmtDateTime } from "@/app/topic/[topicId]/formatted-date-time";
 import ContentEditorTrigger from "@/components/content-editor/content-editor-trigger";
-import { CopyButton } from "@/components/toggle-button/copy-button";
 
 export default async function Page({
   params,
@@ -73,20 +76,24 @@ export default async function Page({
             className="size-10"
           />
 
-          <h1 className="text-xl font-semibold">
-            {post.title ?? "(Không có tiêu đề)"}
+          <h1 className="flex-1 min-w-0 text-xl font-semibold truncate">
+            {post.title}
           </h1>
 
-          <ContentEditorTrigger
-            authorId={post.author_id}
-            defaultPid={post.pid}
-            defaultTitle={post.title}
-            topicId={topicId}
-            refPostId={undefined}
-            limitContentLength={100000}
-            defaultContent={post.content}
-            triggerIcon={<Pencil className="size-5" />}
-          />
+          <div className="ml-auto flex gap-1 shrink-0">
+            <RemovePostTrigger postId={post.pid} authorId={post.author_id} />
+
+            <ContentEditorTrigger
+              authorId={post.author_id}
+              defaultPid={post.pid}
+              defaultTitle={post.title}
+              topicId={topicId}
+              refPostId={undefined}
+              limitContentLength={100000}
+              defaultContent={post.content}
+              triggerIcon={<Pencil className="size-5" />}
+            />
+          </div>
         </header>
 
         {/* Time info */}
@@ -121,8 +128,6 @@ export default async function Page({
             defaultContent={""}
             triggerIcon={<MessageCircle className="size-5" />}
           />
-
-          <CopyButton content={`/topic/${topicId}/${post.pid}`} />
         </div>
       </article>
 
@@ -164,7 +169,11 @@ export default async function Page({
                     triggerIcon={<MessageCircle className="size-5" />}
                   />
 
-                  <CopyButton content={`/topic/${topicId}/${cmt.pid}`} />
+                  <Button variant="ghost" size="icon">
+                    <Link href={`/topic/${topicId}/${cmt.pid}`}>
+                      <Eye className="size-5" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
