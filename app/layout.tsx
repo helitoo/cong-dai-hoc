@@ -8,6 +8,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 
 import { LoadingProvider } from "@/components/loading";
 import { ThemeProvider } from "@/components/theme-provider";
+import FloatingEditor from "@/components/content-editor/floating-editor";
 
 import { BreadcrumbProvider } from "@/components/general-layout/breadcrumb/breadcrumb-provider";
 import CrumbInit from "@/components/general-layout/breadcrumb/crumb-init";
@@ -33,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning className="overflow-y-scroll!">
       <body className={`${montserrat.variable} antialiased`}>
         <LoadingProvider>
           <BreadcrumbProvider>
@@ -51,6 +52,7 @@ export default function RootLayout({
                     <AppNavbar />
                     <ScrollToTopButton />
                     <CrumbInit />
+                    <FloatingEditor />
                     <div className="flex-1 overflow-y-auto">{children}</div>
                     <Footer />
                   </div>

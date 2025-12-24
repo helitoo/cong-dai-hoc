@@ -1,124 +1,152 @@
-"use client";
+import { ChevronLeft, ChevronRight, CirclePlus } from "lucide-react";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { fmtDateTime } from "@/app/topic/[topicId]/formatted-date-time";
 
+import Link from "next/link";
+
+import UserAvatar from "@/components/avatar";
 import { Button } from "@/components/ui/button";
-import { useLoading } from "@/components/loading";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
-import { supabaseClient } from "@/lib/supabase/client";
+import ContentEditorTrigger from "@/components/content-editor/content-editor-trigger";
+import ErrorPage from "@/components/error-page";
 
-type PostMetadata = {
-  pid: string;
-  title: string;
-  last_modified: string;
-  author_id: string;
-  is_pinned: boolean;
-};
+import { createClient } from "@/lib/supabase/server";
 
-const NUM_OF_POST_EACH_PAGE = 10;
+const PAGE_SIZE = 10;
 
-export default function Page({ params }: { params: { topicId: string } }) {
-  const { showLoading, hideLoading } = useLoading();
+export default async function PostList({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ topicId: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const { topicId } = await params;
 
-  const { topicId } = params;
+  if (
+    !["he-thong", "tin-sv", "tin-ts", "kien-thuc", "nguoi-dung"].includes(
+      topicId
+    )
+  )
+    return <ErrorPage code="404" msg="Chủ đề không tồn tại!" />;
 
-  const [posts, setPosts] = useState<PostMetadata[]>([]);
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const page = Math.max(1, Number((await searchParams).page ?? 1));
+  const from = (page - 1) * PAGE_SIZE;
+  const to = from + PAGE_SIZE - 1;
 
-  useEffect(() => {
-    fetchPosts();
-  }, [page, topicId]);
+  const supabase = await createClient();
 
-  async function fetchPosts() {
-    showLoading();
+  const { data, count } = await supabase
+    .from("view_post")
+    .select(
+      `
+      pid,
+      title,
+      last_modified,
+      author_id,
+      author_avt_variant,
+      author_avt_msg,
+      is_pinned,
+      author_is_admin`,
+      { count: "exact" }
+    )
+    .eq("tid", topicId)
+    .range(from, to);
 
-    const from = (page - 1) * NUM_OF_POST_EACH_PAGE;
-    const to = from + NUM_OF_POST_EACH_PAGE - 1;
-
-    const { data, count, error } = await supabaseClient
-      .from("post")
-      .select(
-        `
-        pid,
-        title,
-        last_modified,
-        author_id,
-        is_pinned,
-        post_topic!inner(tid)
-      `,
-        { count: "exact" }
-      )
-      .eq("post_topic.tid", topicId)
-      .order("is_pinned", { ascending: false })
-      .order("last_modified", { ascending: false })
-      .range(from, to);
-
-    if (!error) {
-      setPosts(data as PostMetadata[]);
-      setTotalPages(Math.ceil((count ?? 0) / NUM_OF_POST_EACH_PAGE));
-    }
-
-    hideLoading();
-  }
+  const totalPages = Math.max(1, Math.ceil((count ?? 0) / PAGE_SIZE));
 
   return (
     <div className="background-box flex-col gap-3">
-      {/* Header */}
-      <div className="text-muted-foreground italic text-sm w-full md:w-[95%] mx-auto border-b border-b-muted-foreground mb-4">
-        Có {posts.length} kết quả.
+      <div className="mb-4 flex justify-between items-center">
+        <div className="text-muted-foreground italic text-sm">
+          Có {count ?? 0} kết quả.
+        </div>
+
+        <ContentEditorTrigger
+          authorId={undefined}
+          defaultPid={undefined}
+          defaultTitle={undefined}
+          topicId={topicId}
+          refPostId={undefined}
+          limitContentLength={100000}
+          defaultContent={""}
+          triggerIcon={<CirclePlus className="size-5" />}
+          triggerLabel="Thêm bài viết mới"
+        />
       </div>
 
-      {/* Post list */}
-      <div className="space-y-3">
-        {posts.length &&
-          posts.map((post) => (
-            <div
-              key={post.pid}
-              className="border rounded-md p-3 flex justify-between"
-            >
-              <div>
-                <div className="font-medium">
-                  {post.pid}
-                  {post.is_pinned && (
-                    <span className="ml-2 text-xs text-sky-500">📌 Pin</span>
-                  )}
-                </div>
-                <div className="text-xs text-muted-foreground">
-                  Chỉnh sửa lần cuối{" "}
-                  {new Date(post.last_modified).toLocaleString()}
-                </div>
-              </div>
+      <div className="space-y-1">
+        {data?.map((post) => (
+          <section
+            key={post.pid}
+            className="py-3 px-5 rounded-2xl border-2 bg-background flex justify-between items-center gap-3"
+          >
+            {/* Avatar */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link href={`/topic/nguoi-dung/${post.author_id}`}>
+                  <UserAvatar
+                    msg={post.author_avt_msg}
+                    variant={post.author_avt_variant}
+                    className="size-5"
+                    isAdmin={post.author_is_admin}
+                  />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>
+                  {post.author_is_admin ? "Admin " : ""}
+                  {post.author_id}
+                </p>
+              </TooltipContent>
+            </Tooltip>
+
+            <div className="flex-1 min-w-0">
+              <Link
+                href={`/topic/${topicId}/${post.pid}`}
+                className="block truncate max-w-full font-semibold"
+              >
+                {post.is_pinned && (
+                  <span className="text-sky-500 mr-1">📌</span>
+                )}
+                {post.title ?? "(Không có tiêu đề)"}
+              </Link>
             </div>
-          ))}
+
+            <div className="text-sm italic text-muted-foreground">
+              {fmtDateTime(post.last_modified)}
+            </div>
+          </section>
+        ))}
       </div>
 
       {/* Pagination */}
-      <div className="w-full flex items-center justify-center">
-        <div className="flex items-center justify-end space-x-2 py-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            disabled={page === 1}
-            onClick={() => setPage((p) => p - 1)}
-          >
-            <ChevronLeft className="button-icon" />
-          </Button>
+      <div className="flex justify-center gap-2 py-4">
+        <Button asChild variant="ghost" size="icon" disabled={page === 1}>
+          <Link href={`?page=${page - 1}`}>
+            <ChevronLeft />
+          </Link>
+        </Button>
 
-          <span className="text-sm">
-            {page} / {totalPages}
-          </span>
+        <span>
+          {page} / {totalPages}
+        </span>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            disabled={page === totalPages}
-            onClick={() => setPage((p) => p + 1)}
-          >
-            <ChevronRight className="button-icon" />
-          </Button>
-        </div>
+        <Button
+          asChild
+          variant="ghost"
+          size="icon"
+          disabled={page === totalPages}
+        >
+          <Link href={`?page=${page + 1}`}>
+            <ChevronRight />
+          </Link>
+        </Button>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import Avatar from "boring-avatars";
+import UserAvatar from "@/components/avatar";
 
 import Link from "next/link";
 
@@ -22,7 +22,8 @@ export default function ProfileDropdown({
   auid,
   avt_variant,
   avt_msg,
-}: Metadata) {
+  isAdmin,
+}: Metadata & { isAdmin: boolean }) {
   const { showLoading, hideLoading } = useLoading();
 
   async function signOutHandler() {
@@ -41,10 +42,11 @@ export default function ProfileDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar
-          name={avt_msg}
+        <UserAvatar
+          msg={avt_msg}
           variant={avt_variant}
-          className="size-5 button"
+          isAdmin={isAdmin}
+          className="size-5"
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent>

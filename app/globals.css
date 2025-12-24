@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -312,6 +313,12 @@
 
   .tiptap h4 {
     @apply font-bold italic;
+  }
+
+  /* Link */
+
+  .tiptap a {
+    @apply text-sky-500 hover:underline gap-0;
   }
 
   /* Block */

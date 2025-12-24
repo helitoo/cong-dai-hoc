@@ -11,18 +11,38 @@ import SigninSignupDirection from "@/components/general-layout/app-navbar/signin
 import AppBreadcrumb from "@/components/general-layout/breadcrumb/app-breadcrumb";
 import { ModeToggle } from "@/components/mode-toggle";
 
-import { getMetadata } from "@/app/auth/auth-handler/metadata-manager";
-import type { Metadata } from "@/app/auth/auth-handler/auth-type";
+import {
+  useUserMetadata,
+  type UserMetadata,
+} from "@/app/auth/auth-handler/user-metadata-store";
+
+import { supabase } from "@/lib/supabase/client";
 
 export default function AppNavbar() {
-  const [metadata, setMetadata] = useState<Metadata | undefined>();
+  const [user, setUser] = useState<UserMetadata | undefined>(undefined);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const getMetadata = useUserMetadata((s) => s.getMetadata);
 
   useEffect(() => {
-    (async () => {
-      const temp = await getMetadata();
-      setMetadata(temp);
-    })();
+    async function initUser() {
+      setUser(await getMetadata());
+    }
+    initUser();
   }, []);
+
+  useEffect(() => {
+    async function initUser() {
+      const { data } = await supabase
+        .from("profile")
+        .select("is_admin")
+        .eq("auid", user?.auid);
+
+      const isAdmin = data?.[0]?.is_admin ?? false;
+
+      setIsAdmin(isAdmin);
+    }
+    initUser();
+  }, [user]);
 
   return (
     <header className="flex justify-between items-center p-2 w-full shadow-md z-10 bg-background sticky top-0">
@@ -42,11 +62,23 @@ export default function AppNavbar() {
       <div className="flex items-center gap-2 pr-2">
         <ModeToggle />
 
-        {metadata ? (
+        {user ? (
           <ProfileDropdown
-            auid={metadata.auid}
-            avt_variant={metadata.avt_variant}
-            avt_msg={metadata.avt_msg}
+            auid={user.auid}
+            avt_variant={
+              user.avt_variant as
+                | "pixel"
+                | "bauhaus"
+                | "ring"
+                | "beam"
+                | "sunset"
+                | "marble"
+                | "geometric"
+                | "abstract"
+                | undefined
+            }
+            avt_msg={user.avt_msg}
+            isAdmin={isAdmin}
           />
         ) : (
           <SigninSignupDirection />

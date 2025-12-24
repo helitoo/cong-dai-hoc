@@ -1,91 +1,73 @@
 "use client";
 
 import {
-  Undo,
-  Redo,
-  Pilcrow,
+  ArrowDownToLine,
+  ArrowLeftToLine,
+  ArrowRightToLine,
+  ArrowUpToLine,
+  Bold,
+  CircleEllipsis,
+  CircleQuestionMark,
+  Grid3X3,
   Heading1,
   Heading2,
   Heading3,
   Heading4,
-  Bold,
+  Image,
   Italic,
-  Underline,
   Link,
-  TextAlignStart,
-  TextAlignJustify,
-  TextAlignCenter,
-  TextAlignEnd,
-  ListOrdered,
   List,
+  ListOrdered,
   Logs,
-  MessageSquareMore,
-  Code,
   MessageSquareCode,
   MessageSquareQuote,
-  Import,
-  Sigma,
-  Image,
   Minus,
-  Grid3X3,
-  ArrowUpToLine,
-  ArrowDownToLine,
-  ArrowLeftToLine,
-  ArrowRightToLine,
-  TableColumnsSplit,
-  TableRowsSplit,
+  Pilcrow,
+  Redo,
+  Sigma,
+  SigmaSquare,
   Table2,
   TableCellsMerge,
   TableCellsSplit,
-  Send,
-  X,
-  SigmaSquare,
-  CircleQuestionMark,
-  CircleEllipsis,
+  TableColumnsSplit,
+  TableRowsSplit,
+  TextAlignCenter,
+  TextAlignEnd,
+  TextAlignJustify,
+  TextAlignStart,
+  Underline,
+  Undo,
 } from "lucide-react";
-
-import { setPost } from "@/lib/localStorage/post";
 
 import type { Editor } from "@tiptap/react";
 import { useEditorState } from "@tiptap/react";
 
-import { useRouter } from "next/navigation";
-import { ReactNode } from "react";
+import { Fragment, ReactNode } from "react";
 
+import Note from "@/components/note";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Note from "@/components/note";
 
 import DropdownTriggerBtn from "@/components/dropdown-trigger-button";
 
 import {
-  toggleLink,
   insertBlockMath,
-  insertInlineMath,
   insertImage,
+  insertInlineMath,
+  toggleLink,
 } from "@/components/content-editor/tiptap-commands";
 
 import { useTableSidebar } from "@/components/content-editor/table-listener";
-import PostConfirmation from "@/components/content-editor/post-confirmation";
-import CmtConfirmation from "@/components/content-editor/cmt-confirmation";
 
 // Component
-export default function EditorMenubar({
-  editor,
-  className = "",
-  type = "post",
-}: {
-  editor: Editor;
-  className?: string;
-  type?: "post" | "cmt";
-}) {
-  const router = useRouter();
-
+export default function EditorMenubar({ editor }: { editor: Editor }) {
   // Editor states
 
   const state = useEditorState({
@@ -133,6 +115,7 @@ export default function EditorMenubar({
     label?: ReactNode;
     tooltip?: string;
     subNodes?: CmdNode[];
+    isSeparator?: boolean;
   };
 
   const normalCmdNodes: CmdNode[] = [
@@ -190,11 +173,7 @@ export default function EditorMenubar({
       onClick: () => editor.chain().focus().toggleUnderline().run(),
       icon: <Underline className="button-icon" />,
     },
-    {
-      stateField: "isLink",
-      onClick: () => toggleLink(editor, state.isLink),
-      icon: <Link className="button-icon" />,
-    },
+
     {
       icon: <TextAlignStart className="button-icon" />,
       subNodes: [
@@ -236,18 +215,22 @@ export default function EditorMenubar({
       ],
     },
     {
-      icon: <MessageSquareMore className="button-icon" />,
+      icon: <CircleEllipsis className="button-icon" />,
       subNodes: [
         {
-          stateField: "isCode",
-          onClick: () => editor.chain().focus().toggleCodeBlock().run(),
-          icon: <Code className="button-icon" />,
-          label: (
-            <>
-              Dòng code
-              <Note content="Code được chèn trong dòng chung với các ký tự khác" />
-            </>
-          ),
+          onClick: () => {},
+          icon: <CircleQuestionMark className="button-icon" />,
+          label: <>Hướng dẫn</>,
+        },
+        {
+          isSeparator: true,
+          label: <>Chèn</>,
+        },
+        {
+          stateField: "isBlockquote",
+          onClick: () => editor.chain().focus().toggleBlockquote().run(),
+          icon: <MessageSquareQuote className="button-icon" />,
+          label: <>Khối trích dẫn</>,
         },
         {
           stateField: "isCodeBlock",
@@ -260,17 +243,6 @@ export default function EditorMenubar({
             </>
           ),
         },
-        {
-          stateField: "isBlockquote",
-          onClick: () => editor.chain().focus().toggleBlockquote().run(),
-          icon: <MessageSquareQuote className="button-icon" />,
-          label: <>Khối trích dẫn</>,
-        },
-      ],
-    },
-    {
-      icon: <Import className="button-icon" />,
-      subNodes: [
         {
           onClick: () => insertInlineMath(editor),
           icon: <Sigma className="button-icon" />,
@@ -307,16 +279,20 @@ export default function EditorMenubar({
           label: <>Bảng</>,
         },
         {
+          stateField: "isLink",
+          onClick: () => toggleLink(editor, state.isLink),
+          icon: <Link className="button-icon" />,
+          label: <>Liên kết</>,
+        },
+        {
           onClick: () => editor.chain().focus().setHorizontalRule().run(),
           icon: <Minus className="button-icon" />,
           label: <>Nét gạch ngang</>,
         },
-      ],
-    },
-    {
-      renderWhen: isOpenTable,
-      icon: <Grid3X3 className="button-icon" />,
-      subNodes: [
+        {
+          isSeparator: true,
+          label: <>Chỉnh sửa bảng</>,
+        },
         {
           onClick: () => editor.commands.addColumnBefore(),
           icon: <ArrowRightToLine className="button-icon" />,
@@ -364,29 +340,6 @@ export default function EditorMenubar({
         },
       ],
     },
-    {
-      icon: <CircleEllipsis className="button-icon" />,
-      subNodes: [
-        {
-          onClick: () => {
-            setPost(editor.getHTML());
-            router.back();
-          },
-          icon: <X className="button-icon text-red-500!" />,
-          label: (
-            <>
-              Lưu & Đóng
-              <Note content="Nội dung hiện tại sẽ ghi đè các nội dung được lưu trước đó!" />
-            </>
-          ),
-        },
-        {
-          onClick: () => {},
-          icon: <CircleQuestionMark className="button-icon" />,
-          label: <>Hướng dẫn</>,
-        },
-      ],
-    },
   ];
 
   // Commands list generator
@@ -408,17 +361,31 @@ export default function EditorMenubar({
             </DropdownMenuTrigger>
 
             <DropdownMenuContent>
-              {node.subNodes.map((sub, j) => (
-                <DropdownMenuItem
-                  key={j}
-                  className={
-                    sub.stateField && state[sub.stateField] ? "bg-accent" : ""
-                  }
-                  onClick={sub.onClick ? () => sub.onClick!() : undefined}
-                >
-                  {sub.icon} {sub.label}
-                </DropdownMenuItem>
-              ))}
+              {node.subNodes.map((sub, j) => {
+                // Separator
+                if (sub.isSeparator) {
+                  return (
+                    <Fragment key={j}>
+                      {sub.label && (
+                        <DropdownMenuLabel>{sub.label}</DropdownMenuLabel>
+                      )}
+                      <DropdownMenuSeparator />
+                    </Fragment>
+                  );
+                }
+                // Else
+                return (
+                  <DropdownMenuItem
+                    key={j}
+                    className={
+                      sub.stateField && state[sub.stateField] ? "bg-accent" : ""
+                    }
+                    onClick={sub.onClick}
+                  >
+                    {sub.icon} {sub.label}
+                  </DropdownMenuItem>
+                );
+              })}
             </DropdownMenuContent>
           </DropdownMenu>
         );
@@ -442,7 +409,7 @@ export default function EditorMenubar({
   // Return component
 
   return (
-    <div className={`${className}`}>
+    <>
       {/* Undo / Redo */}
       <Button
         variant="ghost"
@@ -464,13 +431,6 @@ export default function EditorMenubar({
 
       {/* Render normal commands */}
       {cmdListGenerator(normalCmdNodes)}
-
-      {/* Send command */}
-      {type === "post" ? (
-        <PostConfirmation content={editor.getHTML()} isAdmin={false} />
-      ) : (
-        <CmtConfirmation content={editor.getHTML()} />
-      )}
-    </div>
+    </>
   );
 }
