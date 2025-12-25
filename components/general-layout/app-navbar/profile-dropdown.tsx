@@ -51,22 +51,17 @@ export default function ProfileDropdown({
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel className="button">
-          <Link href={`/user/${auid}/profile`}>Trang cá nhân</Link>
+          <Link href={`/topic/nguoi-dung/${auid}`}>Thông tin cá nhân</Link>
         </DropdownMenuLabel>
 
         <DropdownMenuSeparator />
 
         <DropdownMenuItem className="button">
-          <Link href="#">Bài viết của tôi</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem className="button">
-          <Link href="#">Code của tôi</Link>
+          <Link href="/user/my-posts">Bài viết của tôi</Link>
         </DropdownMenuItem>
 
-        <DropdownMenuSeparator />
-
         <DropdownMenuItem className="button">
-          <Link href="#">Bài viết yêu thích</Link>
+          <Link href="/user/favorite-posts">Bài viết yêu thích</Link>
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />

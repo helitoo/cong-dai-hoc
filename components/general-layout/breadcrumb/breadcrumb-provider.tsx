@@ -23,6 +23,14 @@ const crumbMap: Record<string, string> = {
   "ptn-quy-doi-diem": "PTN Quy đổi điểm",
   "ptn-pho-diem": "PTN Phổ điểm",
   "ptn-diem-chuan": "PTN Điểm chuẩn",
+  "tin-sv": "Tin Sinh viên",
+  "tin-ts": "Tin Tuyển sinh",
+  "he-thong": "Hệ thống",
+  "kien-thuc": "Kiến thức",
+  "nguoi-dung": "Người dùng",
+  "favorite-post": "Bài viết yêu thích",
+  "my-post": "Bài viết của tôi",
+  profile: "Profile",
 };
 
 function getCrumbName(crumb: string) {

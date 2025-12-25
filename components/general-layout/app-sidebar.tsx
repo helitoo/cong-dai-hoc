@@ -128,10 +128,6 @@ const sidebarItems: sidebarType = [
         icon: <Lightbulb />,
         linkElm: <Link href="/topic/kien-thuc">Kiến thức</Link>,
       },
-      {
-        icon: <Users />,
-        linkElm: <Link href="/topic/nguoi-dung">Giới thiệu người dùng</Link>,
-      },
     ],
   },
 ];

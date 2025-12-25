@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, CirclePlus } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { fmtDateTime } from "@/lib/formatted-date-time";
 
@@ -11,34 +11,51 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-import ContentEditorTrigger from "@/components/content-editor/content-editor-trigger";
 import ErrorPage from "@/components/error-page";
+
+import RemoveFavPostTrigger from "@/app/user/favorite-posts/remove-favorite-post-trigger";
 
 import { createClient } from "@/lib/supabase/server";
 
 const PAGE_SIZE = 10;
 
 export default async function PostList({
-  params,
   searchParams,
 }: {
-  params: Promise<{ topicId: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const { topicId } = await params;
-
-  if (!["he-thong", "tin-sv", "tin-ts", "kien-thuc"].includes(topicId))
-    return <ErrorPage code="404" msg="Chủ đề không tồn tại!" />;
-
   const page = Math.max(1, Number((await searchParams).page ?? 1));
   const from = (page - 1) * PAGE_SIZE;
   const to = from + PAGE_SIZE - 1;
 
   const supabase = await createClient();
 
+  // Fetch current user
+  async function getCurrentUser() {
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
+    if (!user || userError) return undefined;
+
+    const { data: profile, error: profileError } = await supabase
+      .from("profile")
+      .select("auid")
+      .eq("uid", user.id)
+      .single();
+
+    if (profileError || !profile) return undefined;
+
+    return profile.auid;
+  }
+
+  const auid = await getCurrentUser();
+
+  if (!auid) return <ErrorPage code="401" />;
+
+  // Fetch data
   const { data, count } = await supabase
-    .from("view_post")
+    .from("view_favorite_post")
     .select(
       `
       pid,
@@ -52,29 +69,19 @@ export default async function PostList({
       author_is_admin`,
       { count: "exact" }
     )
-    .contains("tids", topicId)
+    .eq("auid", auid)
     .range(from, to);
 
+  // Total pages
   const totalPages = Math.max(1, Math.ceil((count ?? 0) / PAGE_SIZE));
 
+  // Returned value
   return (
     <div className="background-box flex-col gap-3">
       <div className="mb-4 flex justify-between items-center">
         <div className="text-muted-foreground italic text-sm">
           Có {count ?? 0} kết quả.
         </div>
-
-        <ContentEditorTrigger
-          authorId={undefined}
-          defaultPid={undefined}
-          defaultTitle={undefined}
-          topicId={topicId}
-          refPostId={undefined}
-          limitContentLength={100000}
-          defaultContent={""}
-          triggerIcon={<CirclePlus className="size-5" />}
-          triggerLabel="Thêm bài viết mới"
-        />
       </div>
 
       <div className="space-y-1">
@@ -106,7 +113,7 @@ export default async function PostList({
               </Tooltip>
               <div className="flex-1 min-w-0">
                 <Link
-                  href={`/topic/${topicId}/${post.pid}`}
+                  href={`/topic/${post.tids[0]}/${post.pid}`}
                   className="block truncate max-w-full font-semibold"
                 >
                   {post.is_pinned && (
@@ -118,6 +125,7 @@ export default async function PostList({
               <div className="text-sm italic text-muted-foreground">
                 {fmtDateTime(post.last_modified)}
               </div>
+              <RemoveFavPostTrigger pid={post.pid} />
             </header>
 
             <div className="flex gap-1 flex-wrap">

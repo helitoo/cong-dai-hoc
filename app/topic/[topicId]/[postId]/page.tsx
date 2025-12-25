@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 import FavoriteToggle from "@/app/topic/[topicId]/[postId]/favorite-toggle";
 import RemovePostTrigger from "@/app/topic/[topicId]/[postId]/remove-post-trigger";
-import { fmtDateTime } from "@/app/topic/[topicId]/formatted-date-time";
+import { fmtDateTime } from "@/lib/formatted-date-time";
 import ContentEditorTrigger from "@/components/content-editor/content-editor-trigger";
 
 export default async function Page({
