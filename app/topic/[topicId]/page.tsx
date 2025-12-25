@@ -53,6 +53,7 @@ export default async function PostList({
       { count: "exact" }
     )
     .contains("tids", topicId)
+    .eq("ref_post", null)
     .range(from, to);
 
   const totalPages = Math.max(1, Math.ceil((count ?? 0) / PAGE_SIZE));

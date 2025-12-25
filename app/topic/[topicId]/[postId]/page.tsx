@@ -7,6 +7,11 @@ import { createClient } from "@/lib/supabase/client";
 import UserAvatar from "@/components/avatar";
 import ErrorPage from "@/components/error-page";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import FavoriteToggle from "@/app/topic/[topicId]/[postId]/favorite-toggle";
 import RemovePostTrigger from "@/app/topic/[topicId]/[postId]/remove-post-trigger";
@@ -59,7 +64,7 @@ export default async function Page({
       author_avt_msg,
       author_is_admin`
     )
-    .eq("pid", postId)
+    .eq("ref_post", postId)
     .eq("tid", topicId);
 
   // Returned component
@@ -69,12 +74,24 @@ export default async function Page({
       <article className="box space-y-2">
         {/*  */}
         <header className="flex items-center gap-3">
-          <UserAvatar
-            variant={post.author_avt_variant}
-            msg={post.author_avt_msg}
-            isAdmin={post.author_is_admin}
-            className="size-10"
-          />
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link href={`/topic/nguoi-dung/${post.author_id}`}>
+                <UserAvatar
+                  msg={post.author_avt_msg}
+                  variant={post.author_avt_variant}
+                  className="size-7"
+                  isAdmin={post.author_is_admin}
+                />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>
+                {post.author_is_admin ? "Admin " : ""}
+                {post.author_id}
+              </p>
+            </TooltipContent>
+          </Tooltip>
 
           <h1 className="flex-1 min-w-0 text-xl font-semibold truncate">
             {post.title}
@@ -137,12 +154,24 @@ export default async function Page({
           comments.map((cmt) => (
             <div key={cmt.pid} className="flex gap-3 shadow p-2">
               <div>
-                <UserAvatar
-                  msg={cmt.author_avt_msg}
-                  variant={cmt.author_avt_variant}
-                  className="size-5"
-                  isAdmin={cmt.author_is_admin}
-                />
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link href={`/topic/nguoi-dung/${cmt.author_id}`}>
+                      <UserAvatar
+                        msg={cmt.author_avt_msg}
+                        variant={cmt.author_avt_variant}
+                        className="size-5"
+                        isAdmin={cmt.author_is_admin}
+                      />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>
+                      {post.author_is_admin ? "Admin " : ""}
+                      {post.author_id}
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
               </div>
 
               <div className="flex-1 space-y-1">
