@@ -22,68 +22,15 @@ import ThhbForm from "@/app/topic/(tools)/tinh-diem/form-components/thhb-form";
 import ThptForm from "@/app/topic/(tools)/tinh-diem/form-components/thpt-form";
 
 import {
-  allAvailableSubjects,
   scoreSchema,
   type ScoreData,
 } from "@/lib/universities/calculators/score-data/score-schema";
+import { DEFAULT_SCORE_FORM_VALUES } from "@/app/topic/(tools)/tinh-diem/defaults";
 
 import ScoreDataManager from "@/app/topic/(tools)/tinh-diem/score-data-magager";
 import ScoreRes from "@/app/topic/(tools)/tinh-diem/score-res";
 
-export const DEFAULT_SCORE_FORM_VALUES = {
-  appliedSubjects: ["to", "nv", "an", "ls"],
-  thhb: Object.fromEntries(
-    allAvailableSubjects.map((subject) => [subject, [0, 0, 0, 0, 0, 0]])
-  ),
-  thpt: Object.fromEntries(allAvailableSubjects.map((subject) => [subject, 0])),
-
-  dgtd: 0,
-  dghn: 0,
-
-  dgsg: {
-    to: 0,
-    nv: 0,
-    an: 0,
-    kh: 0,
-  },
-
-  dgsp: Object.fromEntries(allAvailableSubjects.map((subject) => [subject, 0])),
-
-  dgcb: {
-    to: 0,
-    vl: 0,
-    hh: 0,
-    sh: 0,
-    nv: 0,
-    an: 0,
-  },
-
-  vsat: {
-    to: 0,
-    vl: 0,
-    hh: 0,
-    sh: 0,
-    nv: 0,
-    an: 0,
-    ls: 0,
-    dl: 0,
-  },
-
-  dgca: {
-    vl: 0,
-    hh: 0,
-    sh: 0,
-    dl: 0,
-  },
-
-  priority: {
-    dt: 0,
-    kv: 0,
-  },
-
-  achievements: [],
-  certifications: [],
-};
+// DEFAULT_SCORE_FORM_VALUES moved to app/topic/(tools)/tinh-diem/defaults.ts
 
 export default function Page() {
   // Form init

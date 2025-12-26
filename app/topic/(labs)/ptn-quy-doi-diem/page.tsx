@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import Quote from "@/components/quote";
 
-import ScoreConvertForm from "@/app/topic/(labs)/ptn-quy-doi-diem/score-convert-form";
+import ScoreConvertForm from "./score-convert-form";
 
 export default function Page() {
   return (

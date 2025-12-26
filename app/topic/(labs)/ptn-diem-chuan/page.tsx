@@ -5,7 +5,7 @@ import Link from "next/link";
 import Quote from "@/components/quote";
 
 import ScoreDataDef from "@/app/topic/(labs)/ptn-diem-chuan/score-data-def";
-import ScoreQueryForm from "@/app/topic/(labs)//ptn-diem-chuan/score-query-form";
+import ScoreQueryForm from "@/app/topic/(labs)/ptn-diem-chuan/score-query-form";
 
 export default function Page() {
   return (

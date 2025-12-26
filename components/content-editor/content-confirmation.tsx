@@ -18,17 +18,10 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
+import { ContentEditorProps } from "@/components/editor-store";
 import { useLoading } from "@/components/loading";
 import showToast from "@/components/toastify-wrapper";
-import { ContentEditorProps } from "@/components/editor-store";
 
 import { supabase } from "@/lib/supabase/client";
 

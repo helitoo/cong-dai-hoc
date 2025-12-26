@@ -14,7 +14,7 @@ import {
   scoreSchema,
 } from "@/lib/universities/calculators/score-data/score-schema";
 
-import { DEFAULT_SCORE_FORM_VALUES } from "@/app/topic/(tools)/tinh-diem/page";
+import { DEFAULT_SCORE_FORM_VALUES } from "@/app/topic/(tools)/tinh-diem/defaults";
 
 export default function ScoreDataManager({
   form,

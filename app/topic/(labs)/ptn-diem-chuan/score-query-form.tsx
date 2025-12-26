@@ -13,11 +13,11 @@ import { setScoreQuery, getScoreQuery } from "@/lib/localStorage/score-query";
 
 import { select } from "@/lib/duckdb/duckdb";
 
-import { getCurrHHMM } from "@/app/topic/(labs)//ptn-diem-chuan/getCurrHHMM";
+import { getCurrHHMM } from "@/app/topic/(labs)/ptn-diem-chuan/getCurrHHMM";
 import {
   type ScoreQueryResultProps,
   ScoreQueryResult,
-} from "@/app/topic/(labs)//ptn-diem-chuan/score-query-result";
+} from "@/app/topic/(labs)/ptn-diem-chuan/score-query-result";
 
 const forbiddenKeywords = [
   "insert",
@@ -135,9 +135,9 @@ export default function ScoreQueryForm() {
           <div className="relative w-full">
             <Textarea
               placeholder={`SELECT * FROM score.parquet...`}
-              defaultValue={query}
+              value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="pr-10 h-[120px] resize-none overflow-y-auto code-inline font-normal!"
+              className="pr-10 h-30 resize-none overflow-y-auto code-inline font-normal!"
             />
 
             <div className="flex flex-col absolute top-1 right-1">
@@ -155,8 +155,8 @@ export default function ScoreQueryForm() {
           <Label>Console</Label>
           <Textarea
             readOnly
-            defaultValue={consoleMsg}
-            className="pr-10 h-[120px] resize-none overflow-y-auto bg-black text-white font-[Consolas,monospace]"
+            value={consoleMsg}
+            className="pr-10 h-30 resize-none overflow-y-auto bg-black text-white font-[Consolas,monospace]"
           />
         </div>
       </div>

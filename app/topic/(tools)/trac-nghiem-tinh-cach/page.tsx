@@ -32,7 +32,7 @@ export default function Page() {
                 với một số lĩnh vực nghề nghiệp. Cụ thể như sau:
               </p>
               <Image
-                src={"/holland.png"}
+                src={"/images/holland.png"}
                 width={1000}
                 height={600}
                 sizes="100vw"

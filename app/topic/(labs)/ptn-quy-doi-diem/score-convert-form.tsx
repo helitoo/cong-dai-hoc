@@ -24,10 +24,7 @@ import {
 
 import showToast from "@/components/toastify-wrapper";
 
-import {
-  base10ScoreValidator,
-  scoreValidator,
-} from "@/lib/universities/calculators/score-data/score-schema";
+import { scoreValidator } from "@/lib/universities/calculators/score-data/score-schema";
 
 import {
   getExactSubjectGroupFromName,
@@ -55,13 +52,16 @@ export default function ScoreConvertForm() {
   const [resYear, setResYear] = useState<string>("2025");
   const [destYear, setDestYear] = useState<string>("2025");
 
-  const [resSubjectGroupId, setResSubjectGroupId] = useState<SubjectGroupId>();
+  const [resSubjectGroupId, setResSubjectGroupId] =
+    useState<SubjectGroupId>("G001");
   const [destSubjectGroupId, setDestSubjectGroupId] =
-    useState<SubjectGroupId>();
-  const [resSubjectGroupName, setResSubjectGroupName] = useState<string>();
-  const [destSubjectGroupName, setDestSubjectGroupName] = useState<string>();
+    useState<SubjectGroupId>("G001");
+  const [resSubjectGroupName, setResSubjectGroupName] =
+    useState<string>("Toán-Lý-Hóa");
+  const [destSubjectGroupName, setDestSubjectGroupName] =
+    useState<string>("Toán-Lý-Hóa");
 
-  const [resScore, setResScore] = useState<string>();
+  const [resScore, setResScore] = useState<string>("");
   const [destScore, setDestScore] = useState<string>("--");
   const [destPer, setDestPer] = useState<string>("--");
 
@@ -73,8 +73,11 @@ export default function ScoreConvertForm() {
   ) {
     switch (methodId) {
       case "thpt":
-        event.target.value = base10ScoreValidator(
-          event.target.value
+        event.target.value = scoreValidator(
+          event.target.value,
+          0,
+          30,
+          false
         ).toString();
         return;
       case "dghn":
