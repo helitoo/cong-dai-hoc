@@ -18,9 +18,18 @@ import AppSidebar from "@/components/general-layout/app-sidebar";
 import Footer from "@/components/general-layout/footer";
 import ScrollToTopButton from "@/components/general-layout/scroll-to-top";
 
+// export const metadata: Metadata = {
+//   title: "Cổng Đại học",
+//   description: "Hệ thống tra cứu và phân tích thông tin tuyển sinh vào Đại học tại Việt Nam",
+// };
+
 export const metadata: Metadata = {
-  title: "Cổng Đại học",
-  description: "Khám phá thế giới Đại học rộng mở",
+  title: {
+    default: "Cổng Đại học",
+    template: "%s | Cổng Đại học",
+  },
+  description:
+    "Hệ thống tra cứu và phân tích thông tin tuyển sinh vào Đại học tại Việt Nam",
 };
 
 const montserrat = Montserrat({
