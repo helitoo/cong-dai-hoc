@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import z from "zod";
+import { z } from "zod";
 
 import { Send } from "lucide-react";
 
@@ -33,19 +33,19 @@ type ContentConfirmationProps = Omit<
 };
 
 function getPidFromTitle(title: string): string {
-  const random = Math.random().toString(36).slice(2, 7); // 5 ký tự
+  const random = Math.random().toString(36).slice(2, 7);
 
-  return (
-    title
-      .normalize("NFD") // tách dấu
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-zA-Z0-9\s-]/g, "")
-      .trim()
-      .replace(/\s+/g, "-")
-      .toLowerCase() +
-    "-" +
-    random
-  );
+  const slug = title
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D")
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .toLowerCase();
+
+  return `${slug}-${random}`;
 }
 
 export default function ContentConfirmation({
@@ -69,10 +69,6 @@ export default function ContentConfirmation({
   const schema = z.object({
     title: z.string().optional(),
     author_id: z.string(),
-    content: z
-      .string()
-      .min(1, "Nội dung trống!")
-      .max(limitContentLength, "Đã vượt quá độ dài nội dung được cho phép!"),
     is_public: z.boolean(),
     is_pinned: z.boolean(),
     accecpt_ref: z.boolean(),
@@ -85,7 +81,6 @@ export default function ContentConfirmation({
     defaultValues: {
       title: defaultTitle,
       author_id: authorId,
-      content,
       is_public: acceptPublicing,
       is_pinned: acceptPinning,
       accecpt_ref: acceptReferencing,
@@ -95,14 +90,16 @@ export default function ContentConfirmation({
   });
 
   async function submitHandler(data: z.infer<typeof schema>) {
+    console.log("Submitted");
+
     showLoading();
 
     const pid = defaultPid ?? getPidFromTitle(data.title ?? "unknow");
 
     const { error: postError } = await supabase.from("post").upsert({
       pid,
+      content,
       author_id: data.author_id,
-      content: data.content,
       is_public: data.is_public,
       is_pinned: data.is_pinned,
       ref_post: data.ref_post ?? null,
@@ -132,6 +129,8 @@ export default function ContentConfirmation({
     showToast({ type: "success", message: "Đã chia sẻ bài viết!" });
 
     hideLoading();
+
+    window.location.href = `/topic/${data.topicId}`;
   }
 
   // Dialog controller
@@ -139,11 +138,13 @@ export default function ContentConfirmation({
   const [open, setOpen] = useState(false);
 
   const onOpenConfirm = async () => {
-    const isValid = await form.trigger("content");
+    if (!content || content.length === 0) {
+      showToast({ type: "error", message: "Nội dung trống!" });
+      return;
+    }
 
-    if (!isValid) {
-      console.error(form.formState.errors.content?.message);
-      setOpen(false);
+    if (content.length > limitContentLength) {
+      showToast({ type: "error", message: "Vượt quá độ dài cho phép!" });
       return;
     }
 
@@ -152,95 +153,108 @@ export default function ContentConfirmation({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <Button size="icon" variant="ghost" onClick={onOpenConfirm}>
+      <Button
+        size="icon"
+        variant="ghost"
+        onClick={onOpenConfirm}
+        aria-label="Create or Edit content"
+      >
         <Send className="size-5 text-sky-500" />
       </Button>
 
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="box-title">Xác nhận thông tin</DialogTitle>
+        </DialogHeader>
 
-          <form
-            onSubmit={form.handleSubmit(submitHandler)}
-            className="space-y-3"
-          >
-            {/* Title */}
-            {acceptTitling && (
-              <div className="space-y-1">
-                <Label className="ml-1">Tiêu đề</Label>
-                <Input placeholder="Tiêu đề..." {...form.register("title")} />
-              </div>
-            )}
+        <form
+          onSubmit={form.handleSubmit(submitHandler, (errors) => {
+            console.log("Validation errors on submit:", errors);
+            showToast({
+              type: "error",
+              message: "Kiểm tra thông tin chưa hợp lệ.",
+            });
+          })}
+          className="space-y-3"
+        >
+          {/* Title */}
+          {acceptTitling && (
+            <div className="space-y-1">
+              <Label className="ml-1">Tiêu đề</Label>
+              <Input placeholder="Tiêu đề..." {...form.register("title")} />
+            </div>
+          )}
 
-            {/* Ref post */}
-            {refPostId && (
-              <div className="space-y-1">
-                <Label className="ml-1">Mã bài viết phản hồi</Label>
-                <Input
-                  placeholder="Mã bài viết phản hồi..."
-                  {...form.register("ref_post")}
-                  disabled
-                />
-              </div>
-            )}
-
-            {/* Pin */}
-            {acceptPinning && (
-              <Controller
-                control={form.control}
-                name="is_pinned"
-                render={({ field }) => (
-                  <Label className="flex items-center gap-2">
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
-                    Ghim bài viết
-                  </Label>
-                )}
+          {/* Ref post */}
+          {refPostId && (
+            <div className="space-y-1">
+              <Label className="ml-1">Mã bài viết phản hồi</Label>
+              <Input
+                placeholder="Mã bài viết phản hồi..."
+                {...form.register("ref_post")}
+                disabled
               />
-            )}
+            </div>
+          )}
 
-            {/* Public */}
-            {acceptPublicing && (
-              <Controller
-                control={form.control}
-                name="is_public"
-                render={({ field }) => (
-                  <Label className="flex items-center gap-2">
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
-                    Chia sẻ công khai
-                    <Note content="Bài viết công khai cho phép người dùng chưa đăng nhập vẫn xem được" />
-                  </Label>
-                )}
-              />
-            )}
+          {/* Pin */}
+          {acceptPinning && (
+            <Controller
+              control={form.control}
+              name="is_pinned"
+              render={({ field }) => (
+                <Label className="flex items-center gap-2">
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                  Ghim bài viết
+                </Label>
+              )}
+            />
+          )}
 
-            {/* Accept ref */}
-            {acceptReferencing && (
-              <Controller
-                control={form.control}
-                name="accecpt_ref"
-                render={({ field }) => (
-                  <Label className="flex items-center gap-2">
-                    <Checkbox
-                      checked={field.value}
-                      onCheckedChange={field.onChange}
-                    />
-                    Cho phép phản hồi bài viết này
-                  </Label>
-                )}
-              />
-            )}
+          {/* Public */}
+          {acceptPublicing && (
+            <Controller
+              control={form.control}
+              name="is_public"
+              render={({ field }) => (
+                <Label className="flex items-center gap-2">
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                  Chia sẻ công khai
+                  <Note content="Bài viết công khai cho phép người dùng chưa đăng nhập vẫn xem được" />
+                </Label>
+              )}
+            />
+          )}
 
+          {/* Accept ref */}
+          {acceptReferencing && (
+            <Controller
+              control={form.control}
+              name="accecpt_ref"
+              render={({ field }) => (
+                <Label className="flex items-center gap-2">
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                  Cho phép phản hồi bài viết này
+                </Label>
+              )}
+            />
+          )}
+
+          <div className="w-full flex justify-center">
             <Button type="submit" className="submit-button mt-5 mx-auto">
               Chia sẻ
             </Button>
-          </form>
-        </DialogHeader>
+          </div>
+        </form>
       </DialogContent>
     </Dialog>
   );

@@ -45,7 +45,7 @@ export default async function Page({
       author_is_admin`
     )
     .eq("pid", postId)
-    .eq("tid", topicId)
+    .contains("tids", [topicId])
     .single();
 
   if (!post || error)
@@ -98,7 +98,11 @@ export default async function Page({
           </h1>
 
           <div className="ml-auto flex gap-1 shrink-0">
-            <RemovePostTrigger postId={post.pid} authorId={post.author_id} />
+            <RemovePostTrigger
+              postId={post.pid}
+              authorId={post.author_id}
+              topicId={topicId}
+            />
 
             <ContentEditorTrigger
               authorId={post.author_id}

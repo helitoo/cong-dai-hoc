@@ -2,7 +2,7 @@
 
 import { Trash } from "lucide-react";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import {
   AlertDialog,
@@ -15,21 +15,22 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
 
 import { useUserMetadata } from "@/app/auth/auth-handler/user-metadata-store";
 
 import { supabase } from "@/lib/supabase/client";
 
-import showToast from "@/components/toastify-wrapper";
 import { useLoading } from "@/components/loading";
+import showToast from "@/components/toastify-wrapper";
 
 export default function RemovePostTrigger({
   postId,
   authorId,
+  topicId,
 }: {
   postId: string;
   authorId: string;
+  topicId: string;
 }) {
   const [auid, setAuid] = useState<string | undefined>(undefined);
   const getMetadata = useUserMetadata((s) => s.getMetadata);
@@ -53,6 +54,8 @@ export default function RemovePostTrigger({
 
     if (error) showToast({ type: "error", message: "Lỗi! Hãy thử lại sau!" });
     else showToast({ type: "success", message: "Đã xóa bài viết!" });
+
+    window.location.href = `/topic/${topicId}`;
 
     hideLoading();
   }

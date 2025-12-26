@@ -122,8 +122,8 @@ export default function ContentEditor({
 
   // Return component
   return (
-    <div className="w-full p-0 flex flex-col">
-      <div className="flex w-full items-center justify-center py-1">
+    <div className="w-full h-full flex flex-col">
+      <div className="flex w-full items-center justify-center py-1 shrink-0 border-b">
         <EditorMenubar editor={editor} />
 
         <ContentConfirmation
@@ -148,7 +148,7 @@ export default function ContentEditor({
       <EditorContent
         editor={editor}
         spellCheck={false}
-        className="overflow-auto pt-4 pb-1 px-10 md:px-20 h-fit"
+        className="flex-1 min-h-0 overflow-y-scroll pt-4 pb-1 px-10 md:px-20 mb-10 border-b"
       />
     </div>
   );

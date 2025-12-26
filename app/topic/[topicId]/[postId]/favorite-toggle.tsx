@@ -38,7 +38,7 @@ export default function FavoriteToggle({ postId }: { postId: string }) {
       const [{ count }, { data }] = await Promise.all([
         supabase
           .from("favorite_post")
-          .select("1", { count: "exact", head: true })
+          .select("*", { count: "exact", head: true })
           .eq("pid", postId),
 
         supabase
@@ -76,32 +76,26 @@ export default function FavoriteToggle({ postId }: { postId: string }) {
         .eq("auid", auid);
     }
 
-    setClickCount((prev) => {
-      const next = prev + 1;
-      const delay = next >= CLICK_THRESHOLD ? PENALTY_DELAY : BASE_DELAY;
+    const nextClick = clickCount + 1;
+    const delay = nextClick >= CLICK_THRESHOLD ? PENALTY_DELAY : BASE_DELAY;
 
-      if (delay === BASE_DELAY)
-        showToast({
-          type: "info",
-          message: "Sau 10s nữa mới được click vào nút này!",
-        });
-      else
-        showToast({
-          type: "info",
-          message: "Sau 15' nữa mới được click vào nút này!",
-        });
+    setClickCount(nextClick);
+    setDisabled(true);
 
-      setDisabled(true);
-
-      if (timerRef.current) clearTimeout(timerRef.current);
-
-      timerRef.current = window.setTimeout(() => {
-        setDisabled(false);
-        setClickCount(0);
-      }, delay);
-
-      return next;
+    showToast({
+      type: "info",
+      message:
+        delay === BASE_DELAY
+          ? "Sau 10s nữa mới được click vào nút này!"
+          : "Sau 15' nữa mới được click vào nút này!",
     });
+
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    timerRef.current = window.setTimeout(() => {
+      setDisabled(false);
+      setClickCount(0);
+    }, delay);
   };
 
   useEffect(() => {

@@ -27,6 +27,8 @@ export default function RemoveFavPostTrigger({ pid }: { pid: string }) {
       });
 
     hideLoading();
+
+    window.location.reload();
   }
 
   return (

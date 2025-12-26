@@ -38,10 +38,10 @@ export default function ContentEditorTrigger({
   className = "",
 }: ContentEditorTriggerProps) {
   // States
-  const [user, setUser] = useState<UserMetadata | undefined>(undefined);
-
-  const [isAuthor, setIsAuthor] = useState(false);
-
+  const [currAuid, setCurrAuid] = useState<string | undefined>(undefined);
+  const [resolvedAuthorId, setResolvedAuthorId] = useState<string | undefined>(
+    authorId
+  );
   const [isAdmin, setIsAdmin] = useState(false);
 
   const getMetadata = useUserMetadata((s) => s.getMetadata);
@@ -50,33 +50,37 @@ export default function ContentEditorTrigger({
   // Get current user
   useEffect(() => {
     async function init() {
-      setUser(await getMetadata());
+      const currUser = await getMetadata();
+      setCurrAuid(currUser?.auid);
     }
     init();
   }, []);
 
-  // Auth author and admin
+  // Auth author
   useEffect(() => {
-    async function init() {
-      if (!authorId) authorId = user?.auid;
-      setIsAuthor(authorId === user?.auid);
+    if (!resolvedAuthorId) setResolvedAuthorId(currAuid);
+  }, [currAuid]);
 
-      setIsAdmin(
-        (
-          await supabase
-            .from("profile")
-            .select("is_admin")
-            .eq("auid", authorId)
-            .single()
-        ).data?.is_admin ?? false
-      );
+  // Auth admin
+  useEffect(() => {
+    if (!currAuid) return;
+
+    async function init() {
+      const { data } = await supabase
+        .from("profile")
+        .select("is_admin")
+        .eq("auid", currAuid)
+        .single();
+
+      setIsAdmin(data?.is_admin ?? false);
     }
+
     init();
-  }, [user]);
+  }, [currAuid]);
 
   return (
     <>
-      {user && isAuthor && (
+      {resolvedAuthorId && resolvedAuthorId === currAuid && (
         <Button
           aria-label="Edit content"
           variant={!triggerLabel ? "ghost" : "outline"}
@@ -84,7 +88,7 @@ export default function ContentEditorTrigger({
           className={className}
           onClick={() =>
             openEditor({
-              authorId,
+              authorId: resolvedAuthorId,
               defaultPid,
               defaultTitle,
               topicId,

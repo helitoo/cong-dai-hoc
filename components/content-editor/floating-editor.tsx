@@ -21,7 +21,12 @@ export default function FloatingEditor() {
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!e.currentTarget.hasPointerCapture(e.pointerId)) return;
     const delta = startY.current - e.clientY;
-    setHeight(Math.min(Math.max(100, startHeight.current + delta), 800));
+    setHeight(
+      Math.min(
+        Math.max(100, startHeight.current + delta),
+        window.innerHeight * 0.9
+      )
+    );
   };
 
   const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {

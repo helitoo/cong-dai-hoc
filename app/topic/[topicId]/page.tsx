@@ -52,8 +52,8 @@ export default async function PostList({
       author_is_admin`,
       { count: "exact" }
     )
-    .contains("tids", topicId)
-    .eq("ref_post", null)
+    .contains("tids", [topicId])
+    .is("ref_post", null)
     .range(from, to);
 
   const totalPages = Math.max(1, Math.ceil((count ?? 0) / PAGE_SIZE));
@@ -84,7 +84,7 @@ export default async function PostList({
             key={post.pid}
             className="py-3 px-5 rounded-2xl border-2 bg-background flex flex-col"
           >
-            <header className="flex justify-between items-center gap-3">
+            <header className="flex justify-between items-start gap-3">
               {" "}
               {/* Avatar */}
               <Tooltip>
@@ -105,32 +105,36 @@ export default async function PostList({
                   </p>
                 </TooltipContent>
               </Tooltip>
-              <div className="flex-1 min-w-0">
-                <Link
-                  href={`/topic/${topicId}/${post.pid}`}
-                  className="block truncate max-w-full font-semibold"
-                >
-                  {post.is_pinned && (
-                    <span className="text-sky-500 mr-1">📌</span>
-                  )}
-                  {post.title ?? "(Không có tiêu đề)"}
-                </Link>
+              {/* Title and topics */}
+              <div className="flex flex-col w-full">
+                <div className="flex-1 min-w-0">
+                  <Link
+                    href={`/topic/${topicId}/${post.pid}`}
+                    className="block truncate max-w-full font-semibold"
+                  >
+                    {post.is_pinned && (
+                      <span className="text-sky-500 mr-1">📌</span>
+                    )}
+                    {post.title ?? "(Không có tiêu đề)"}
+                  </Link>
+                </div>
+                <div className="flex gap-1 flex-wrap mt-1">
+                  {post.tids.map((tid: string) => (
+                    <Link
+                      key={tid}
+                      href={`/topic/${tid}`}
+                      className="p-0.5 px-1.5 text-sm rounded-full bg-sky-500/50 text-white button"
+                    >
+                      {tid}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="text-sm italic text-muted-foreground">
+              {/* Last modified */}
+              <div className="text-sm italic text-muted-foreground w-fit whitespace-nowrap">
                 {fmtDateTime(post.last_modified)}
               </div>
             </header>
-
-            <div className="flex gap-1 flex-wrap">
-              {post.tids.map((tid: string) => (
-                <Link
-                  href={`/topic/${tid}`}
-                  className="p-1 rounded bg-sky-500 text-white"
-                >
-                  {tid}
-                </Link>
-              ))}
-            </div>
           </section>
         ))}
       </div>
