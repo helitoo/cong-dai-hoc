@@ -78,6 +78,7 @@ export default function ContentEditorTrigger({
     <>
       {user && isAuthor && (
         <Button
+          aria-label="Edit content"
           variant={!triggerLabel ? "ghost" : "outline"}
           size={!triggerLabel ? "icon" : "default"}
           className={className}

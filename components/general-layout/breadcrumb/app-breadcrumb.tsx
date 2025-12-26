@@ -18,11 +18,11 @@ export default function AppBreadcrumb() {
   const { crumbs } = useBreadcrumb();
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="hidden md:block">
       <BreadcrumbList className="flex flex-nowrap overflow-hidden max-w-full">
         {crumbs.filter(Boolean).map((crumb, index) => (
           <Fragment key={index}>
-            <BreadcrumbItem className="shrink-0 max-w-[200px]">
+            <BreadcrumbItem className="shrink-0 max-w-50">
               <BreadcrumbLink asChild className="block truncate">
                 <Link href={crumb.pathname}>{crumb.name}</Link>
               </BreadcrumbLink>

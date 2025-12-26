@@ -30,7 +30,12 @@ export default function RemoveFavPostTrigger({ pid }: { pid: string }) {
   }
 
   return (
-    <Button size="icon" variant="ghost" onClick={removeFavPost}>
+    <Button
+      size="icon"
+      variant="ghost"
+      onClick={removeFavPost}
+      aria-label="Remove favorite post"
+    >
       <HeartOff className="size-5 text-red-500" />
     </Button>
   );

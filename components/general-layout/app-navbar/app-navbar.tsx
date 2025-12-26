@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
@@ -48,13 +49,16 @@ export default function AppNavbar() {
     <header className="flex justify-between items-center p-2 w-full shadow-md z-10 bg-background sticky top-0">
       {/* Left side */}
       <div className="flex items-center gap-2">
-        <Image
-          src={"/images/logo.png"}
-          width={25}
-          height={25}
-          alt={"Logo"}
-          draggable={false}
-        />
+        <Link href="/" className="button">
+          <Image
+            src={"/images/logo.png"}
+            width={25}
+            height={25}
+            alt={"Logo"}
+            draggable={false}
+          />
+        </Link>
+
         <AppBreadcrumb />
       </div>
 

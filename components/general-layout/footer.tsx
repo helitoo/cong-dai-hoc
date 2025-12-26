@@ -76,36 +76,40 @@ export default function Footer() {
             Cổng Đại học
           </h3>
           <p className="text-sm text-white font-semibold">
-            © Bảo • Thông tin đã cập nhật đến năm 2025
+            Thông tin đã cập nhật đến năm 2025
           </p>
         </div>
 
         {/* Social icons */}
-        <div className="flex gap-3 my-4 md:my-0 border-t-2 border-white md:border-0 p-2 md:p-0">
-          <div className="flex flex-col gap-2">
+        <div className="flex gap-3 my-4 md:my-0  p-2 md:p-0">
+          <div className="flex flex-row md:flex-col gap-2">
             {contactInfo.map((contactNode, index) => (
               <Link
                 key={index}
                 href={contactNode.url}
                 target="_blank"
-                className="flex gap-2 items-center button text-white"
+                className="flex gap-4 md:gap-2 items-center button text-white"
               >
                 {contactNode.icon}
-                <span className="text-sm truncate">{contactNode.label}</span>
+                <span className="text-sm truncate hidden md:block">
+                  {contactNode.label}
+                </span>
               </Link>
             ))}
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-row md:flex-col gap-2">
             {repoInfo.map((contactNode, index) => (
               <Link
                 key={index}
                 href={contactNode.url}
                 target="_blank"
-                className="flex gap-2 items-center button text-white"
+                className="flex gap-4 md:gap-2 items-center button text-white"
               >
                 {contactNode.icon}
-                <span className="text-sm truncate">{contactNode.label}</span>
+                <span className="text-sm truncate hidden md:block">
+                  {contactNode.label}
+                </span>
               </Link>
             ))}
           </div>

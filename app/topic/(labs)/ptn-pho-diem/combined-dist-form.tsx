@@ -8,13 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 
 import showToast from "@/components/toastify-wrapper";
 
@@ -99,22 +95,19 @@ export default function CombinedDistForm({
     <div className="flex items-center justify-evenly gap-2 p-2 shadow">
       <div className="flex flex-col gap-1 w-full">
         <Label className="ml-1">Kỳ thi</Label>
-        <Select
+
+        <NativeSelect
+          className="w-full"
           value={distQuery.examId}
-          onValueChange={(v) =>
-            setDistQuery({ ...distQuery, examId: v as ExamId })
+          onChange={(e) =>
+            setDistQuery({ ...distQuery, examId: e.target.value as ExamId })
           }
         >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn phương thức..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="thpt">Tốt nghiệp THPT</SelectItem>
-              <SelectItem value="dgcb">ĐGNLCB HCMUE (H-SCA)</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+          <NativeSelectOption value="thpt">Tốt nghiệp THPT</NativeSelectOption>
+          <NativeSelectOption value="dgcb">
+            ĐGNLCB HCMUE (H-SCA)
+          </NativeSelectOption>
+        </NativeSelect>
       </div>
 
       <div className="flex flex-col gap-1 w-full">
@@ -129,21 +122,16 @@ export default function CombinedDistForm({
 
       <div className="flex flex-col gap-1 w-full">
         <Label className="ml-1">Năm thi</Label>
-        <Select
+
+        <NativeSelect
+          className="w-full"
           value={distQuery.year.toString()}
-          onValueChange={(v) => setDistQuery({ ...distQuery, year: v })}
+          onChange={(e) => setDistQuery({ ...distQuery, year: e.target.value })}
         >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn năm..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="2023">2023</SelectItem>
-              <SelectItem value="2024">2024</SelectItem>
-              <SelectItem value="2025">2025</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+          <NativeSelectOption value="2025">2025</NativeSelectOption>
+          <NativeSelectOption value="2024">2024</NativeSelectOption>
+          <NativeSelectOption value="2023">2023</NativeSelectOption>
+        </NativeSelect>
       </div>
 
       <Button onClick={onClickHandler} variant="ghost" size="icon">

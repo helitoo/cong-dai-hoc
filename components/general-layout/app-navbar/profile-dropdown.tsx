@@ -40,7 +40,7 @@ export default function ProfileDropdown({
   }
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false} aria-label={"Personal info dashboard"}>
       <DropdownMenuTrigger>
         <UserAvatar
           msg={avt_msg}

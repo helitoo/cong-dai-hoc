@@ -12,12 +12,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 
 import { ScoreData } from "@/lib/universities/calculators/score-data/score-schema";
 
@@ -74,30 +71,26 @@ export default function CertificationsForm({
               control={control}
               name={`certifications.${idx}.type`}
               render={({ field }) => (
-                <Select
-                  onValueChange={(value) => {
-                    field.onChange(value);
-
-                    // reset score
+                <NativeSelect
+                  className="w-full"
+                  value={field.value}
+                  onChange={(e) => {
+                    field.onChange(e.target.value);
                     setValue(`certifications.${idx}.score`, "", {
                       shouldDirty: true,
                       shouldTouch: true,
                       shouldValidate: true,
                     });
                   }}
-                  value={field.value}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Chọn loại" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="sat">SAT</SelectItem>
-                    <SelectItem value="act">ACT</SelectItem>
-                    <SelectItem value="alevel">A-Level</SelectItem>
-                    <SelectItem value="ib">IB</SelectItem>
-                    <SelectItem value="ielts">IELTS</SelectItem>
-                  </SelectContent>
-                </Select>
+                  <NativeSelectOption value="ielts">IELTS</NativeSelectOption>
+                  <NativeSelectOption value="sat">SAT</NativeSelectOption>
+                  <NativeSelectOption value="act">ACT</NativeSelectOption>
+                  <NativeSelectOption value="alevel">
+                    A-Level
+                  </NativeSelectOption>
+                  <NativeSelectOption value="ib">IB</NativeSelectOption>
+                </NativeSelect>
               )}
             />
           </div>

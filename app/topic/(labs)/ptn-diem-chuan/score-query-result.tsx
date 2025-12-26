@@ -215,6 +215,7 @@ export function ScoreQueryResult({ data }: { data: ScoreQueryResultProps }) {
             size="icon"
             disabled={!table.getCanPreviousPage()}
             onClick={() => table.previousPage()}
+            aria-label="Previous page"
           >
             <ChevronLeft className="button-icon" />
           </Button>
@@ -228,6 +229,7 @@ export function ScoreQueryResult({ data }: { data: ScoreQueryResultProps }) {
             size="icon"
             disabled={!table.getCanNextPage()}
             onClick={() => table.nextPage()}
+            aria-label="Next page"
           >
             <ChevronRight className="button-icon" />
           </Button>

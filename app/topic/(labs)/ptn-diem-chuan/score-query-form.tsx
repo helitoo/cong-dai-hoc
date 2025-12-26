@@ -82,7 +82,7 @@ function queryValidator(rawSql: string): {
     };
   }
 
-  return { ok: true, sql, message: "Query verified." };
+  return { ok: true, sql, message: "Executing..." };
 }
 
 // Main component

@@ -28,12 +28,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 
 import { useUserMetadata } from "@/app/auth/auth-handler/user-metadata-store";
 
@@ -188,28 +185,36 @@ export default function EditProfile({
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>Avatar style</FormLabel>
-                          <Select
+
+                          <NativeSelect
                             value={field.value}
-                            onValueChange={field.onChange}
+                            onChange={field.onChange}
                           >
-                            <FormControl>
-                              <SelectTrigger className="w-full">
-                                <SelectValue placeholder="Chọn style" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="pixel">Pixel</SelectItem>
-                              <SelectItem value="bauhaus">Bauhaus</SelectItem>
-                              <SelectItem value="ring">Ring</SelectItem>
-                              <SelectItem value="beam">Beam</SelectItem>
-                              <SelectItem value="sunset">Sunset</SelectItem>
-                              <SelectItem value="marble">Marble</SelectItem>
-                              <SelectItem value="geometric">
-                                Geometric
-                              </SelectItem>
-                              <SelectItem value="abstract">Abstract</SelectItem>
-                            </SelectContent>
-                          </Select>
+                            <NativeSelectOption value="pixel">
+                              Pixel
+                            </NativeSelectOption>
+                            <NativeSelectOption value="bauhaus">
+                              Bauhaus
+                            </NativeSelectOption>
+                            <NativeSelectOption value="ring">
+                              Ring
+                            </NativeSelectOption>
+                            <NativeSelectOption value="beam">
+                              Beam
+                            </NativeSelectOption>
+                            <NativeSelectOption value="sunset">
+                              Sunset
+                            </NativeSelectOption>
+                            <NativeSelectOption value="marble">
+                              Marble
+                            </NativeSelectOption>
+                            <NativeSelectOption value="geometric">
+                              Geometric
+                            </NativeSelectOption>
+                            <NativeSelectOption value="abstract">
+                              Abstract
+                            </NativeSelectOption>
+                          </NativeSelect>
                           <FormMessage />
                         </FormItem>
                       )}

@@ -61,7 +61,7 @@ export default function RemovePostTrigger({
     <>
       {auid === authorId && (
         <AlertDialog>
-          <AlertDialogTrigger className="button">
+          <AlertDialogTrigger className="button" aria-label="Remove content">
             <Trash className="size-5 text-red-500" />
           </AlertDialogTrigger>
           <AlertDialogContent>

@@ -11,7 +11,8 @@ export default function Page() {
     <div className="background-box">
       <div className="box w-full h-fit pb-10">
         <h1 className="box-title w-full flex items-center gap-2">
-          <ArrowRightLeft className="size-7" /> Phòng thí nghiệm Quy đổi điểm
+          <ArrowRightLeft className="size-7 hidden md:block" /> Phòng thí nghiệm
+          Quy đổi điểm
         </h1>
 
         <div className="space-y-3">

@@ -14,13 +14,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 
 import showToast from "@/components/toastify-wrapper";
 
@@ -215,44 +211,42 @@ export default function ScoreConvertForm() {
           <div className="flex gap-2">
             <div className="flex flex-col gap-1 w-2/3">
               <Label className="ml-1">Kỳ thi</Label>
-              <Select
+
+              <NativeSelect
+                className="w-full"
                 value={resMethodId}
-                onValueChange={(v) => {
-                  setResMethodId(v as MethodId);
+                onChange={(e) => {
+                  setResMethodId(e.target.value as MethodId);
                   setResScore("");
                 }}
               >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Chọn kỳ thi..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="thpt">Tốt nghiệp THPT</SelectItem>
-                    <SelectItem value="dgtd">ĐGTD HUST (TSA)</SelectItem>
-                    <SelectItem value="dghn">ĐGNL ĐHQG-HN (HSA)</SelectItem>
-                    <SelectItem value="dgsg">ĐGNL ĐHQG-HCM (V-ACT)</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+                <NativeSelectOption value="thpt">
+                  Tốt nghiệp THPT
+                </NativeSelectOption>
+                <NativeSelectOption value="dgtd">
+                  ĐGTD HUST (TSA)
+                </NativeSelectOption>
+                <NativeSelectOption value="dghn">
+                  ĐGNL ĐHQG-HN (HSA)
+                </NativeSelectOption>
+                <NativeSelectOption value="dgsg">
+                  ĐGNL ĐHQG-HCM (V-ACT)
+                </NativeSelectOption>
+              </NativeSelect>
             </div>
 
             <div className="flex flex-col gap-1 w-1/3">
               <Label className="ml-1">Năm thi</Label>
-              <Select
+
+              <NativeSelect
+                className="w-full"
                 value={resYear}
-                onValueChange={(v) => setResYear(v as MethodId)}
+                onChange={(e) => setResYear(e.target.value)}
               >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Chọn năm..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="2025">2025</SelectItem>
-                    <SelectItem value="2024">2024</SelectItem>
-                    <SelectItem value="2023">2023</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+                <NativeSelectOption value="2025">2025</NativeSelectOption>
+                <NativeSelectOption value="2024">2024</NativeSelectOption>
+                <NativeSelectOption value="2023">2023</NativeSelectOption>
+              </NativeSelect>
             </div>
           </div>
 
@@ -287,41 +281,39 @@ export default function ScoreConvertForm() {
           <div className="flex gap-2">
             <div className="flex flex-col gap-1 w-2/3">
               <Label className="ml-1">Kỳ thi</Label>
-              <Select
+
+              <NativeSelect
+                className="w-full"
                 value={destMethodId}
-                onValueChange={(v) => setDestMethodId(v as MethodId)}
+                onChange={(e) => setDestMethodId(e.target.value as MethodId)}
               >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Chọn kỳ thi..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="thpt">Tốt nghiệp THPT</SelectItem>
-                    <SelectItem value="dgtd">ĐGTD HUST (TSA)</SelectItem>
-                    <SelectItem value="dghn">ĐGNL ĐHQG-HN (HSA)</SelectItem>
-                    <SelectItem value="dgsg">ĐGNL ĐHQG-HCM (V-ACT)</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+                <NativeSelectOption value="thpt">
+                  Tốt nghiệp THPT
+                </NativeSelectOption>
+                <NativeSelectOption value="dgtd">
+                  ĐGTD HUST (TSA)
+                </NativeSelectOption>
+                <NativeSelectOption value="dghn">
+                  ĐGNL ĐHQG-HN (HSA)
+                </NativeSelectOption>
+                <NativeSelectOption value="dgsg">
+                  ĐGNL ĐHQG-HCM (V-ACT)
+                </NativeSelectOption>
+              </NativeSelect>
             </div>
 
             <div className="flex flex-col gap-1 w-1/3">
               <Label className="ml-1">Năm thi</Label>
-              <Select
+
+              <NativeSelect
+                className="w-full"
                 value={destYear}
-                onValueChange={(v) => setDestYear(v as MethodId)}
+                onChange={(e) => setDestYear(e.target.value)}
               >
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Chọn năm..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectItem value="2025">2025</SelectItem>
-                    <SelectItem value="2024">2024</SelectItem>
-                    <SelectItem value="2023">2023</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
+                <NativeSelectOption value="2025">2025</NativeSelectOption>
+                <NativeSelectOption value="2024">2024</NativeSelectOption>
+                <NativeSelectOption value="2023">2023</NativeSelectOption>
+              </NativeSelect>
             </div>
           </div>
 
@@ -351,7 +343,7 @@ export default function ScoreConvertForm() {
           <h3>Phân vị</h3>
           <div className="font-semibold text-blue-500">{destPer}</div>
         </div>
-        <div className="pattern w-full h-[50px]"></div>
+        <div className="pattern w-full h-12.5"></div>
       </div>
     </div>
   );

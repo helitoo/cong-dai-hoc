@@ -137,7 +137,13 @@ export default async function PostList({
 
       {/* Pagination */}
       <div className="flex justify-center gap-2 py-4">
-        <Button asChild variant="ghost" size="icon" disabled={page === 1}>
+        <Button
+          asChild
+          variant="ghost"
+          size="icon"
+          disabled={page === 1}
+          aria-label="Previous page"
+        >
           <Link href={`?page=${page - 1}`}>
             <ChevronLeft />
           </Link>
@@ -153,7 +159,7 @@ export default async function PostList({
           size="icon"
           disabled={page === totalPages}
         >
-          <Link href={`?page=${page + 1}`}>
+          <Link href={`?page=${page + 1}`} aria-label="Next page">
             <ChevronRight />
           </Link>
         </Button>

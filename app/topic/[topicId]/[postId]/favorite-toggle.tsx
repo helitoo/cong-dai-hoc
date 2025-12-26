@@ -118,6 +118,7 @@ export default function FavoriteToggle({ postId }: { postId: string }) {
       onPressedChange={toggle}
       disabled={disabled || !auid}
       className="flex items-center gap-2"
+      aria-label="Favorite content"
     >
       <Heart
         className={`size-5 ${active ? "fill-red-400 text-red-400" : ""}`}

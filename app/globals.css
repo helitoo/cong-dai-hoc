@@ -201,7 +201,7 @@
   }
 
   .background-box {
-    @apply flex size-full p-5;
+    @apply flex size-full py-5 md:p-5;
   }
 
   .box {

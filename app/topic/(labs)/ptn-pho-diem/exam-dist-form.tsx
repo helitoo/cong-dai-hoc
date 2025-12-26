@@ -7,13 +7,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 
 import showToast from "@/components/toastify-wrapper";
 
@@ -78,78 +74,65 @@ export default function ExamDistForm({
     <div className="flex items-center justify-evenly gap-2 p-2 shadow">
       <div className="flex flex-col gap-1 w-full">
         <Label className="ml-1">Kỳ thi</Label>
-        <Select
+
+        <NativeSelect
+          className="w-full"
           value={distQuery.examId}
-          onValueChange={(v) =>
-            setDistQuery({ ...distQuery, examId: v as ExamId })
+          onChange={(e) =>
+            setDistQuery({ ...distQuery, examId: e.target.value as ExamId })
           }
         >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn kỳ thi..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="thpt">Tốt nghiệp THPT</SelectItem>
-              <SelectItem value="dgtd">ĐGTD HUST (TSA)</SelectItem>
-              <SelectItem value="dghn">ĐGNL ĐHQG-HN (HSA)</SelectItem>
-              <SelectItem value="dgsg">ĐGNL ĐHQG-HCM (V-ACT)</SelectItem>
-              <SelectItem value="dgcb">ĐGNLCB HCMUE (H-SCA)</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+          <NativeSelectOption value="thpt">Tốt nghiệp THPT</NativeSelectOption>
+          <NativeSelectOption value="dgtd">ĐGTD HUST (TSA)</NativeSelectOption>
+          <NativeSelectOption value="dghn">
+            ĐGNL ĐHQG-HN (HSA)
+          </NativeSelectOption>
+          <NativeSelectOption value="dgsg">
+            ĐGNL ĐHQG-HCM (V-ACT)
+          </NativeSelectOption>
+          <NativeSelectOption value="dgcb">
+            ĐGNLCB HCMUE (H-SCA)
+          </NativeSelectOption>
+        </NativeSelect>
       </div>
 
-      <div className="flex flex-col gap-1 w-full">
+      <div className="flex flex-col gap-1 w-full ">
         <Label className="ml-1">Môn thi</Label>
-        <Select
+
+        <NativeSelect
+          className="w-full"
           value={distQuery.subjectId}
-          onValueChange={(v) =>
-            setDistQuery({ ...distQuery, subjectId: v as SubjectId })
-          }
-          disabled={
-            String(distQuery.examId) != "thpt" &&
-            String(distQuery.examId) != "dgcb"
+          onChange={(e) =>
+            setDistQuery({ ...distQuery, subjectId: e.target.value })
           }
         >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn môn học..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="to">Toán</SelectItem>
-              <SelectItem value="vl">Lý</SelectItem>
-              <SelectItem value="hh">Hóa</SelectItem>
-              <SelectItem value="sh">Sinh</SelectItem>
-              <SelectItem value="th">Tin</SelectItem>
-              <SelectItem value="an">Anh</SelectItem>
-              <SelectItem value="nv">Văn</SelectItem>
-              <SelectItem value="ls">Sử</SelectItem>
-              <SelectItem value="dl">Địa</SelectItem>
-              <SelectItem value="gd">GDKT-PL</SelectItem>
-              <SelectItem value="c1">CNCN</SelectItem>
-              <SelectItem value="c2">CNNN</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+          <NativeSelectOption value="to">Toán</NativeSelectOption>
+          <NativeSelectOption value="vl">Lý</NativeSelectOption>
+          <NativeSelectOption value="hh">Hóa</NativeSelectOption>
+          <NativeSelectOption value="sh">Sinh</NativeSelectOption>
+          <NativeSelectOption value="th">Tin</NativeSelectOption>
+          <NativeSelectOption value="an">Anh</NativeSelectOption>
+          <NativeSelectOption value="nv">Văn</NativeSelectOption>
+          <NativeSelectOption value="ls">Sử</NativeSelectOption>
+          <NativeSelectOption value="dl">Địa</NativeSelectOption>
+          <NativeSelectOption value="gd">GDKT-PL</NativeSelectOption>
+          <NativeSelectOption value="c1">CNCN</NativeSelectOption>
+          <NativeSelectOption value="c2">CNNN</NativeSelectOption>
+        </NativeSelect>
       </div>
 
       <div className="flex flex-col gap-1 w-full">
         <Label className="ml-1">Năm thi</Label>
-        <Select
+
+        <NativeSelect
+          className="w-full"
           value={distQuery.year.toString()}
-          onValueChange={(v) => setDistQuery({ ...distQuery, year: v })}
+          onChange={(e) => setDistQuery({ ...distQuery, year: e.target.value })}
         >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn năm..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="2023">2023</SelectItem>
-              <SelectItem value="2024">2024</SelectItem>
-              <SelectItem value="2025">2025</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+          <NativeSelectOption value="2025">2025</NativeSelectOption>
+          <NativeSelectOption value="2024">2024</NativeSelectOption>
+          <NativeSelectOption value="2023">2023</NativeSelectOption>
+        </NativeSelect>
       </div>
 
       <Button onClick={onClickHandler} variant="ghost" size="icon">

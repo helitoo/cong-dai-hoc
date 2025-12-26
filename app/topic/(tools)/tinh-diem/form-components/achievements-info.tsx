@@ -6,13 +6,9 @@ import { Control, Controller, useFieldArray } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 import Quote from "@/components/quote";
 
 import { ScoreData } from "@/lib/universities/calculators/score-data/score-schema";
@@ -47,22 +43,19 @@ export default function AchievementsForm({
               control={control}
               name={`achievements.${idx}.type`}
               render={({ field }) => (
-                <Select
-                  value={field.value?.toString()}
-                  defaultValue={field.value?.toString()}
-                  onValueChange={(v) => field.onChange(Number(v))}
+                <NativeSelect
+                  className="w-full"
+                  value={field.value.toString()}
+                  onChange={(e) => field.onChange(Number(e.target.value))}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Chọn Loại TT..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value="0">Cấp Tỉnh</SelectItem>
-                      <SelectItem value="1">Cấp Quốc gia</SelectItem>
-                      <SelectItem value="2">Cấp Quốc tế / Khu vực</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
+                  <NativeSelectOption value="0">Cấp Tỉnh</NativeSelectOption>
+                  <NativeSelectOption value="1">
+                    Cấp Quốc gia
+                  </NativeSelectOption>
+                  <NativeSelectOption value="2">
+                    Cấp Quốc tế / Khu vực
+                  </NativeSelectOption>
+                </NativeSelect>
               )}
             />
           </div>
@@ -73,23 +66,24 @@ export default function AchievementsForm({
               control={control}
               name={`achievements.${idx}.prize`}
               render={({ field }) => (
-                <Select
-                  value={field.value?.toString()}
-                  defaultValue={field.value?.toString()}
-                  onValueChange={(v) => field.onChange(Number(v))}
+                <NativeSelect
+                  className="w-full"
+                  value={field.value.toString()}
+                  onChange={(e) => field.onChange(Number(e.target.value))}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Chọn Loại TT..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectItem value="0">Giải Tư / Khuyến khích</SelectItem>
-                      <SelectItem value="1">Giải Ba / HC Đồng</SelectItem>
-                      <SelectItem value="2">Giải Nhì / HC Bạc</SelectItem>
-                      <SelectItem value="3">Giải Nhất / HC Vàng</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
+                  <NativeSelectOption value="0">
+                    Giải Tư / Khuyến khích
+                  </NativeSelectOption>
+                  <NativeSelectOption value="1">
+                    Giải Ba / HC Đồng
+                  </NativeSelectOption>
+                  <NativeSelectOption value="2">
+                    Giải Nhì / HC Bạc
+                  </NativeSelectOption>
+                  <NativeSelectOption value="3">
+                    Giải Nhất / HC Vàng
+                  </NativeSelectOption>
+                </NativeSelect>
               )}
             />
           </div>

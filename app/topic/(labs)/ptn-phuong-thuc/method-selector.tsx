@@ -2,18 +2,15 @@
 
 import { Search } from "lucide-react";
 
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
 
 import { industryL1Table } from "@/lib/universities/convertors/industry-l1";
 import { industryL3Table } from "@/lib/universities/convertors/industry-l3";
@@ -42,56 +39,53 @@ export default function MethodSelector({
     <div className="flex flex-col md:flex-row justify-evenly items-center gap-2 p-2">
       <div className="flex flex-col gap-1 w-full">
         <Label className="ml-1">Nhóm ngành</Label>
-        <Select value={industryL1Id} onValueChange={setIndustryL1Id}>
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn nhóm ngành..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              {L1List.map(([id, name]) => (
-                <SelectItem key={id} value={id}>
-                  {name}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+
+        <NativeSelect
+          className="w-full"
+          value={industryL1Id}
+          onChange={(e) => setIndustryL1Id(e.target.value)}
+          aria-label="Industry selectpicker"
+        >
+          {L1List.map(([id, name]) => (
+            <NativeSelectOption key={id} value={id}>
+              {name}
+            </NativeSelectOption>
+          ))}
+        </NativeSelect>
       </div>
 
       <div className="flex flex-col gap-1 w-full">
         <Label className="ml-1">Ngành</Label>
-        <Select value={industryL3Id} onValueChange={setIndustryL3Id}>
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn ngành..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="0000000">Tổng hợp</SelectItem>
-              {L3List.map(([id, name]) => (
-                <SelectItem key={id} value={id}>
-                  {name}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+
+        <NativeSelect
+          className="w-full"
+          value={industryL3Id}
+          onChange={(e) => setIndustryL3Id(e.target.value)}
+          aria-label="Major selectpicker"
+        >
+          <NativeSelectOption value="0000000">Tổng hợp</NativeSelectOption>
+          {L3List.map(([id, name]) => (
+            <NativeSelectOption key={id} value={id}>
+              {name}
+            </NativeSelectOption>
+          ))}
+        </NativeSelect>
       </div>
 
       <div className="flex flex-col gap-1 w-full">
         <Label className="ml-1">Khu vực</Label>
-        <Select value={schoolRegion} onValueChange={setSchoolRegion}>
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Chọn khu vực..." />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="AL">Cả nước</SelectItem>
-              <SelectItem value="NR">Miền Bắc</SelectItem>
-              <SelectItem value="CR">Miền Trung</SelectItem>
-              <SelectItem value="SR">Miền Nam</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+
+        <NativeSelect
+          className="w-full"
+          value={schoolRegion}
+          onChange={(e) => setSchoolRegion(e.target.value)}
+          aria-label="School region selectpicker"
+        >
+          <NativeSelectOption value="AL">Cả nước</NativeSelectOption>
+          <NativeSelectOption value="NR">Miền Bắc</NativeSelectOption>
+          <NativeSelectOption value="CR">Miền Trung</NativeSelectOption>
+          <NativeSelectOption value="SR">Miền Nam</NativeSelectOption>
+        </NativeSelect>
       </div>
 
       <Button
@@ -100,6 +94,7 @@ export default function MethodSelector({
         onClick={() =>
           methodQueryHandler(industryL1Id, industryL3Id, schoolRegion)
         }
+        aria-label="Search"
       >
         <Search className="button-icon text-green-500" />
       </Button>

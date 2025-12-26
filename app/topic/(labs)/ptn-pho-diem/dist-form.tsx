@@ -100,7 +100,7 @@ export default function DistForm() {
         </div>
       </div>
 
-      <div className="h-[400px]">
+      <div className="h-100">
         <LineChart
           datasets={Array.from(dists.values()).map((v) => v.dataset)}
           xLabel={`Mốc điểm ${scoreScale ? "(đã quy về thang 10)" : ""}`}
