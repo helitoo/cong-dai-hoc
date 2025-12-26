@@ -37,6 +37,8 @@ export default function ProfileDropdown({
     }
 
     hideLoading();
+
+    window.location.href = "/";
   }
 
   return (

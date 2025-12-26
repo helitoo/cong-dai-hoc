@@ -62,7 +62,10 @@ export default function SigninForm() {
     const res = await signIn(name, password, type);
 
     if (res.code === "error") showToast({ type: "error", message: res.msg });
-    else showToast({ type: "success", message: "Đăng nhập thành công!" });
+    else {
+      showToast({ type: "success", message: "Đăng nhập thành công!" });
+      window.location.href = "/";
+    }
 
     hideLoading();
   }
