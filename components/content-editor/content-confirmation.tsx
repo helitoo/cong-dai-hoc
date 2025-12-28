@@ -1,9 +1,9 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { z } from "zod";
+import { Controller, UseFormReturn } from "react-hook-form";
+
+import { type EditorConfirmation } from "@/components/content-editor/content-editor";
 
 import { Send } from "lucide-react";
 
@@ -19,90 +19,68 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import { ContentEditorProps } from "@/components/editor-store";
 import { useLoading } from "@/components/loading";
 import showToast from "@/components/toastify-wrapper";
 
 import { supabase } from "@/lib/supabase/client";
 
-type ContentConfirmationProps = Omit<
-  ContentEditorProps,
-  "closeEditorHandler" | "defaultContent"
-> & {
-  content: string;
-};
-
 function getPidFromTitle(title: string): string {
   const random = Math.random().toString(36).slice(2, 7);
 
   const slug = title
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .trim()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/đ/g, "d")
-    .replace(/Đ/g, "D")
-    .replace(/[^\p{L}\p{N}\s-]/gu, "")
-    .trim()
+    .replace(/Đ/g, "d")
     .replace(/\s+/g, "-")
     .toLowerCase();
 
   return `${slug}-${random}`;
 }
 
+type ContentConfirmationProps = {
+  form: UseFormReturn<EditorConfirmation>;
+  defaultPid: string | undefined;
+  acceptTitling: boolean;
+  acceptPublicing: boolean;
+  acceptPinning: boolean;
+  acceptReferencing: boolean;
+  refPostId: string | undefined;
+  topicId: string;
+  limitContentLength: number;
+};
+
 export default function ContentConfirmation({
-  authorId,
+  form,
   defaultPid,
-  defaultTitle,
   acceptTitling,
   acceptPublicing,
   acceptPinning,
   acceptReferencing,
-  topicId,
   refPostId,
+  topicId,
   limitContentLength,
-  content,
 }: ContentConfirmationProps) {
-  // Use loading
   const { showLoading, hideLoading } = useLoading();
 
-  // Form controller
+  const content = form.watch("content");
 
-  const schema = z.object({
-    title: z.string().optional(),
-    author_id: z.string(),
-    is_public: z.boolean(),
-    is_pinned: z.boolean(),
-    accecpt_ref: z.boolean(),
-    ref_post: z.string().optional(),
-    topicId: z.string(),
-  });
-
-  const form = useForm<z.infer<typeof schema>>({
-    resolver: zodResolver(schema),
-    defaultValues: {
-      title: defaultTitle,
-      author_id: authorId,
-      is_public: acceptPublicing,
-      is_pinned: acceptPinning,
-      accecpt_ref: acceptReferencing,
-      ref_post: refPostId,
-      topicId,
-    },
-  });
-
-  async function submitHandler(data: z.infer<typeof schema>) {
-    console.log("Submitted");
-
+  async function submitHandler(data: EditorConfirmation) {
     showLoading();
 
+    // Get post id
     const pid = defaultPid ?? getPidFromTitle(data.title ?? "unknow");
 
+    // Push post to database
     const { error: postError } = await supabase.from("post").upsert({
       pid,
-      content,
+      content: data.content,
       author_id: data.author_id,
       is_public: data.is_public,
       is_pinned: data.is_pinned,
-      ref_post: data.ref_post ?? null,
+      ref_post: refPostId,
       accecpt_ref: data.accecpt_ref,
       title: data.title,
     });
@@ -114,9 +92,10 @@ export default function ContentConfirmation({
       return;
     }
 
+    // Push post - topic to database
     const { error: postTopicError } = await supabase.from("post_topic").upsert({
       pid,
-      tid: data.topicId,
+      tid: topicId,
     });
 
     if (postTopicError) {
@@ -130,7 +109,7 @@ export default function ContentConfirmation({
 
     hideLoading();
 
-    window.location.href = `/topic/${data.topicId}`;
+    window.location.href = `/topic/${topicId}`;
   }
 
   // Dialog controller
@@ -170,6 +149,7 @@ export default function ContentConfirmation({
         <form
           onSubmit={form.handleSubmit(submitHandler, (errors) => {
             console.log("Validation errors on submit:", errors);
+            console.log(form.getValues());
             showToast({
               type: "error",
               message: "Kiểm tra thông tin chưa hợp lệ.",
@@ -182,18 +162,6 @@ export default function ContentConfirmation({
             <div className="space-y-1">
               <Label className="ml-1">Tiêu đề</Label>
               <Input placeholder="Tiêu đề..." {...form.register("title")} />
-            </div>
-          )}
-
-          {/* Ref post */}
-          {refPostId && (
-            <div className="space-y-1">
-              <Label className="ml-1">Mã bài viết phản hồi</Label>
-              <Input
-                placeholder="Mã bài viết phản hồi..."
-                {...form.register("ref_post")}
-                disabled
-              />
             </div>
           )}
 
