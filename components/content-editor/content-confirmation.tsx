@@ -93,16 +93,23 @@ export default function ContentConfirmation({
     }
 
     // Push post - topic to database
-    const { error: postTopicError } = await supabase.from("post_topic").upsert({
-      pid,
-      tid: topicId,
-    });
+    if (!defaultPid) {
+      const { error: postTopicError } = await supabase
+        .from("post_topic")
+        .upsert({
+          pid,
+          tid: topicId,
+        });
 
-    if (postTopicError) {
-      showToast({ type: "error", message: postTopicError.message });
-      showToast({ type: "error", message: "Đã xảy ra lỗi, hãy thử lại sau." });
-      hideLoading();
-      return;
+      if (postTopicError) {
+        showToast({ type: "error", message: postTopicError.message });
+        showToast({
+          type: "error",
+          message: "Đã xảy ra lỗi, hãy thử lại sau.",
+        });
+        hideLoading();
+        return;
+      }
     }
 
     showToast({ type: "success", message: "Đã chia sẻ bài viết!" });

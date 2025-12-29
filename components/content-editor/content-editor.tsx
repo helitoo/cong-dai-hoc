@@ -9,19 +9,14 @@ import { z } from "zod";
 
 // Tiptap extensions
 
-import StarterKit from "@tiptap/starter-kit";
-
-import Underline from "@tiptap/extension-underline";
-
-import Link from "@tiptap/extension-link";
-
-import TextAlign from "@tiptap/extension-text-align";
-
 import Image from "@tiptap/extension-image";
-import ImageResize from "tiptap-extension-resize-image";
-
+import Link from "@tiptap/extension-link";
 import Mathematics from "@tiptap/extension-mathematics";
+import TextAlign from "@tiptap/extension-text-align";
+import Underline from "@tiptap/extension-underline";
+import StarterKit from "@tiptap/starter-kit";
 import "katex/dist/katex.min.css";
+import ImageResize from "tiptap-extension-resize-image";
 
 import { TableKit } from "@tiptap/extension-table";
 

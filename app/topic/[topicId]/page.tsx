@@ -110,7 +110,7 @@ export default async function PostList({
                 <div className="flex-1 min-w-0">
                   <Link
                     href={`/topic/${topicId}/${post.pid}`}
-                    className="block truncate max-w-full font-semibold"
+                    className="text-wrap max-w-full font-semibold"
                   >
                     {post.is_pinned && (
                       <span className="text-sky-500 mr-1">📌</span>

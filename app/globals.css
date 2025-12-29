@@ -241,6 +241,12 @@
     @apply leading-relaxed;
   }
 
+  .tiptap p:empty::before {
+    content: "";
+    display: block;
+    height: 1em;
+  }
+
   .editor-cmd-group {
     @apply flex items-center bg-background gap-1!;
   }

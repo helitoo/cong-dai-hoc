@@ -73,7 +73,7 @@ export default async function Page({
       {/* ===== POST ===== */}
       <article className="box space-y-2">
         {/*  */}
-        <header className="flex items-center gap-3">
+        <header className="flex items-start gap-3">
           <Tooltip>
             <TooltipTrigger asChild>
               <Link href={`/topic/nguoi-dung/${post.author_id}`}>
@@ -93,7 +93,7 @@ export default async function Page({
             </TooltipContent>
           </Tooltip>
 
-          <h1 className="flex-1 min-w-0 text-xl font-semibold truncate">
+          <h1 className="flex-1 min-w-0 text-xl font-semibold text-wrap">
             {post.title}
           </h1>
 
