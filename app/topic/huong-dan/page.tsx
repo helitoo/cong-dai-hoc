@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Quote from "@/components/quote";
+
 function FeatureSection({
   sectionSeq = "",
   title,
@@ -35,7 +37,7 @@ function FeatureSection({
             </h3>
           </div>
 
-          <div className="mt-4 mb-6 h-1 w-[120px] bg-sky-500 rounded" />
+          <div className="mt-4 mb-6 h-1 w-30 bg-sky-500 rounded" />
 
           <p className="text-[18px] md:text-[20px] leading-relaxed">
             {content}
@@ -94,11 +96,11 @@ export default function LandingPage() {
             className="mb-8 transition-all duration-150 hover:-translate-y-1"
           />
 
-          <h1 className="text-[32px] leading-[38px] md:text-[42px] md:leading-[50px] xl:text-[56px] xl:leading-[66px] text-sky-500 font-montserrat font-bold">
+          <h1 className="text-[32px] leading-9.5 md:text-[42px] md:leading-12.5 xl:text-[56px] xl:leading-16.5 text-sky-500 font-montserrat font-bold">
             Cổng đại học
           </h1>
 
-          <div className="mt-4 mb-6 h-1 w-[140px] bg-sky-500 rounded" />
+          <div className="mt-4 mb-6 h-1 w-35 bg-sky-500 rounded" />
 
           <p className="max-w-3xl text-[18px] md:text-[20px] leading-relaxed text-center">
             Bộ công cụ hỗ trợ tuyển sinh toàn vẹn - giúp bạn hiểu rõ bản thân,
@@ -111,7 +113,7 @@ export default function LandingPage() {
       <FeatureSection
         sectionSeq="Bước 1"
         title="Tính điểm xét tuyển"
-        content="Vào trang Tính điểm, nhập điểm số của bản thân. Cổng sẽ tự động tính toán điểm xét tuyển cho tất cả các phương thức hiện hành, giúp bạn có cái nhìn toàn diện về khả năng bản thân hiện tại."
+        content="Vào trang Tính điểm, nhập điểm số của bản thân. Cổng sẽ tự động tính toán điểm xét tuyển cho tất cả các phương thức hiện hành, bao gồm tự suy luận điểm Học bạ và THPT dựa trên dữ liệu của Bộ, giúp bạn có cái nhìn toàn diện về khả năng bản thân hiện tại."
         image="/huong-dan/tinh-diem.png"
         reverse={false}
       />
@@ -149,7 +151,7 @@ export default function LandingPage() {
             Hãy tự khám phá phần còn lại!
           </h2>
 
-          <div className="mt-4 mb-6 h-1 w-[120px] bg-sky-500 rounded" />
+          <div className="mt-4 mb-6 h-1 w-30 bg-sky-500 rounded" />
 
           <p className="max-w-2xl text-[18px] md:text-[20px]">
             Cổng không chỉ là một trang web đơn thuần - đó là một tấm bản đồ
@@ -158,6 +160,27 @@ export default function LandingPage() {
           </p>
         </div>
       </section>
+
+      {/*  */}
+      <div className="px-10">
+        <Quote type="warning">
+          <ul className="list-disc space-y-2">
+            <li className="ml-5">
+              Dữ liệu của trang web có độ chính xác cao nhưng{" "}
+              <strong>
+                không phải là nguồn dữ liệu chính thức của Nhà nước
+              </strong>
+              . Bạn có thể kiểm tra dataset của trang web tại repository hoặc
+              Kaggle.
+            </li>
+            <li className="ml-5">
+              Sau khi sử dụng trang web,{" "}
+              <strong>nên tra cứu lại thông tin từ các nguồn chính thức</strong>{" "}
+              để đảm bảo độ chính xác.
+            </li>
+          </ul>
+        </Quote>
+      </div>
 
       <Image
         src={"/huong-dan/bku.png"}

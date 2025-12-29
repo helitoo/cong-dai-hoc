@@ -76,7 +76,7 @@ export default function Footer() {
             Cổng Đại học
           </h3>
           <p className="text-sm text-white font-semibold">
-            Thông tin đã cập nhật đến năm 2025
+            Đã cập nhật đến trước mùa tuyển sinh 2026
           </p>
         </div>
 

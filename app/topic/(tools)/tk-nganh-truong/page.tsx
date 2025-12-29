@@ -22,6 +22,13 @@ export default function Page() {
           Nếu không chọn gì, trang web sẽ <strong>tìm kiếm tất cả</strong>.
         </Quote>
 
+        <Quote type="warning">
+          Trang web vẫn đang sử dụng tên cũ của trường Đại học Công nghệ kỹ
+          thuật TP.HCM (HCMUTE) là{" "}
+          <strong>trường Đại học Sư phạm kỹ thuật TP.HCM (HCMUTE)</strong>, mã
+          tuyển sinh: <strong>SPK</strong>.
+        </Quote>
+
         <MajorFinderForm />
       </div>
     </div>
