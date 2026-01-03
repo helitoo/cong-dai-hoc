@@ -62,7 +62,7 @@ function SubjectGroupBoxes({
           {subjectGroupIds.map((groupId, index) => (
             <div
               key={index}
-              className={`p-1 rounded text-xs text-white ${getBgColorFromSubjectGroup(
+              className={`flex-1 min-w-fit p-1 rounded-2xl text-xs flex items-center justify-center text-white ${getBgColorFromSubjectGroup(
                 groupId
               )}`}
             >
@@ -185,7 +185,7 @@ function ReturnedMajors({
                 <h2 className="text-xl text-sky-400">{major.schoolName}</h2>
               </div>
 
-              <div className="space-y-5 ml-5">
+              <div className="space-y-6 ml-5">
                 {major.majorInfo.map((majorInfo, index) => (
                   <div
                     key={index}
@@ -210,8 +210,8 @@ function ReturnedMajors({
                     </div>
 
                     {/* Method + subject */}
-                    <div className="flex flex-wrap gap-2 ml-2">
-                      <div className="p-1 rounded text-xs w-fit text-white font-semibold bg-linear-to-r from-sky-500 to-indigo-500">
+                    <div className="flex flex-wrap  ml-2 justify-evenly items-start space-y-1 gap-1">
+                      <div className="flex-1 min-w-fit p-1 rounded-2xl text-xs flex items-center justify-center text-white font-semibold bg-linear-to-r from-sky-500 to-indigo-500">
                         Pt. {getMethodName(majorInfo.methodId)}
                       </div>
 

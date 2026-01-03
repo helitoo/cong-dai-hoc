@@ -11,33 +11,41 @@ import { Label } from "@/components/ui/label";
 
 import type { MajorQueries } from "@/lib/universities/calculators/major-finder/major-queries-schema";
 
-import { getExactSchoolFromName } from "@/lib/universities/convertors/schools";
+import { BestMatchRes } from "@/lib/universities/general-helpers/get-exact-data";
 
-export function SchoolInputText({
-  setValue,
-}: {
+type DynamicInputTextProps = {
   setValue: UseFormSetValue<MajorQueries>;
-}) {
-  const [schoolNames, setSchoolNames] = useState<string[]>([]);
+  getExactValue: (name: string) => BestMatchRes;
+  name: keyof MajorQueries;
+  label: string;
+  placeholder: string;
+};
+
+export function DynamicInputText({
+  setValue,
+  getExactValue,
+  name,
+  label,
+  placeholder,
+}: DynamicInputTextProps) {
+  const [names, setNames] = useState<string[]>([]);
 
   const syncToForm = (names: string[]) => {
     const ids = names
       .map((name) => {
         if (!name.trim()) return null;
-        const exact = getExactSchoolFromName(name);
+        const exact = getExactValue(name);
         return exact?.id ?? null;
       })
       .filter(Boolean) as string[];
 
-    setValue("schoolIds", ids, {
+    setValue(name, ids, {
       shouldDirty: true,
     });
-
-    // console.log(ids);
   };
 
   const handleBlur = (index: number) => {
-    const next = [...schoolNames];
+    const next = [...names];
     const rawName = next[index];
 
     if (!rawName?.trim()) {
@@ -45,42 +53,42 @@ export function SchoolInputText({
       return;
     }
 
-    const exact = getExactSchoolFromName(rawName);
+    const exact = getExactValue(rawName);
     if (!exact) return;
 
     next[index] = exact.name;
 
-    setSchoolNames(next);
+    setNames(next);
 
     syncToForm(next);
   };
 
   const add = () => {
-    const next = [...schoolNames, ""];
-    setSchoolNames(next);
+    const next = [...names, ""];
+    setNames(next);
   };
 
   const remove = (index: number) => {
-    const next = schoolNames.filter((_, i) => i !== index);
-    setSchoolNames(next);
+    const next = names.filter((_, i) => i !== index);
+    setNames(next);
     syncToForm(next);
   };
 
   const updateName = (index: number, value: string) => {
-    const next = [...schoolNames];
+    const next = [...names];
     next[index] = value;
-    setSchoolNames(next);
+    setNames(next);
   };
 
   return (
     <div className="w-full space-y-2">
-      <Label>Tên / tên viết tắt trường ĐH</Label>
+      <Label>{label}</Label>
 
-      {schoolNames.map((name, index) => (
+      {names.map((name, index) => (
         <div key={index} className="flex gap-1">
           <Input
             value={name}
-            placeholder="ĐH Bách khoa HCM..."
+            placeholder={placeholder}
             onChange={(e) => updateName(index, e.target.value)}
             onBlur={() => handleBlur(index)}
           />

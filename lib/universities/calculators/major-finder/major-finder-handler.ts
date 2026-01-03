@@ -77,12 +77,26 @@ function getStmFromMajorQueries(majorQueries: MajorQueries) {
         .join(", ")})`
     : "";
 
+  const methodIdStm = majorQueries.methodIds.length
+    ? `method_id IN (${majorQueries.methodIds
+        .map((id) => `'${id}'`)
+        .join(", ")})`
+    : "";
+
+  const subjectGroupStm = majorQueries.subjectGroupIds.length
+    ? `subject_group_id IN ('A000', 'A001', ${majorQueries.subjectGroupIds
+        .map((id) => `'${id}'`)
+        .join(", ")})`
+    : "";
+
   const minScoreStm = `converted_score >= ${majorQueries.minScore}`;
 
   return getWhereStm(
     [
       getWhereStm([schoolIdStm, schoolTypeStm, schoolRegionStm], "AND"),
       industryL3IdStm,
+      methodIdStm,
+      subjectGroupStm,
       minScoreStm,
     ],
     "AND"

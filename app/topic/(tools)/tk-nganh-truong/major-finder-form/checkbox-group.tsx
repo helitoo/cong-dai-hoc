@@ -9,6 +9,7 @@ interface CheckboxGroupProps {
   label: string;
   options: { label: string; id: string }[];
   control: Control<any>;
+  direction?: "vertical" | "horizontal";
 }
 
 export function CheckboxGroup({
@@ -16,6 +17,7 @@ export function CheckboxGroup({
   label,
   options,
   control,
+  direction = "vertical",
 }: CheckboxGroupProps) {
   return (
     <div className="w-full space-y-2">
@@ -25,7 +27,11 @@ export function CheckboxGroup({
         control={control}
         name={name}
         render={({ field }) => (
-          <div className="flex flex-col gap-2 ml-5">
+          <div
+            className={`flex ${
+              direction === "vertical" ? "flex-col" : "flex-row flex-wrap"
+            } gap-2 ml-5`}
+          >
             {options.map((opt) => {
               const checked = field.value?.includes(opt.id);
 
