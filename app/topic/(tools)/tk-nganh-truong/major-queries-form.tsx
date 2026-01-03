@@ -5,17 +5,15 @@ import { Controller, useForm } from "react-hook-form";
 
 import Link from "next/link";
 
+import Quote from "@/components/quote";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 
 import { CheckboxGroup } from "@/app/topic/(tools)/tk-nganh-truong/major-finder-form/checkbox-group";
-import { DynamicInputtext } from "@/app/topic/(tools)/tk-nganh-truong/major-finder-form/dynamic-inputtext";
+import { IndustrySelect } from "@/app/topic/(tools)/tk-nganh-truong/major-finder-form/industry-select";
+import { SchoolInputText } from "@/app/topic/(tools)/tk-nganh-truong/major-finder-form/school-input-text";
 import MajorRes from "@/app/topic/(tools)/tk-nganh-truong/major-res";
-
-import { getExactIndustry1FromName } from "@/lib/universities/convertors/industry-l1";
-import { getExactIndustry3FromName } from "@/lib/universities/convertors/industry-l3";
-import { getExactSchoolFromName } from "@/lib/universities/convertors/schools";
 
 import {
   majorQueriesSchema,
@@ -46,16 +44,12 @@ export default function MajorQueriesForm() {
           Nhập thông tin trường
         </h2>
 
-        <div className="flex flex-wrap md:flex-nowrap justify-evenly space-y-3 gap-4">
-          <DynamicInputtext
-            label="Tên / tên viết tắt trường ĐH"
-            placeholder="ĐH Bách khoa HCM..."
-            name="schoolIds"
-            control={form.control}
-            getExactDataFormName={getExactSchoolFromName}
-          />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div className="col-span-2 md:col-span-2">
+            <SchoolInputText setValue={form.setValue} />
+          </div>
 
-          <div className="flex w-full">
+          <div className="col-span-1">
             <CheckboxGroup
               label="Loại hình trường"
               name="schoolTypes"
@@ -65,7 +59,9 @@ export default function MajorQueriesForm() {
                 { id: "private", label: "Tư thục / Dân lập" },
               ]}
             />
+          </div>
 
+          <div className="col-span-1">
             <CheckboxGroup
               label="Khu vực"
               name="schoolRegions"
@@ -87,23 +83,7 @@ export default function MajorQueriesForm() {
           Thông tin Ngành / Nhóm ngành
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <DynamicInputtext
-            label="Nhóm ngành"
-            placeholder="Kỹ thuật..."
-            name="industryL1Ids"
-            control={form.control}
-            getExactDataFormName={getExactIndustry1FromName}
-          />
-
-          <DynamicInputtext
-            label="Ngành"
-            placeholder="Hóa học..."
-            name="industryL3Ids"
-            control={form.control}
-            getExactDataFormName={getExactIndustry3FromName}
-          />
-        </div>
+        <IndustrySelect setValue={form.setValue} />
       </div>
 
       <div className="p-4 shadow-sm">
@@ -159,7 +139,7 @@ export default function MajorQueriesForm() {
           </div>
 
           <div className="space-y-1">
-            <Label>Số ngành tối đa trả về</Label>
+            <Label>Số trường tối đa trả về</Label>
             <Controller
               control={form.control}
               name="numberOfReturnedValue"
@@ -216,6 +196,12 @@ export default function MajorQueriesForm() {
           </Label>
         </div>
       </div>
+
+      <Quote type="warning">
+        Bộ lọc nhóm ngành và khu vực trường có thể vô tình chọn trúng một số
+        ngành không liên quan. Các bạn báo cáo bằng cách gửi email cho địa chỉ
+        bên dưới. Xin cảm ơn.
+      </Quote>
 
       <MajorRes majorQueriesForm={form} />
     </div>

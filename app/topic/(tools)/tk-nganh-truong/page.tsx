@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import Quote from "@/components/quote";
 
-import MajorFinderForm from "@/app/topic/(tools)/tk-nganh-truong/major-finder-form/major-queries-form";
+import MajorFinderForm from "@/app/topic/(tools)/tk-nganh-truong/major-queries-form";
 
 export default function Page() {
   return (

@@ -58,7 +58,7 @@ function SubjectGroupBoxes({
   return (
     <>
       {methodId != "dgsg" && methodId != "dghn" && methodId != "dgtd" ? (
-        <div className="flex flex-wrap gap-1 items-center">
+        <>
           {subjectGroupIds.map((groupId, index) => (
             <div
               key={index}
@@ -71,7 +71,7 @@ function SubjectGroupBoxes({
                 : getSubjectGroupName(groupId as SubjectGroupId)}
             </div>
           ))}
-        </div>
+        </>
       ) : (
         <></>
       )}
@@ -147,7 +147,7 @@ function ReturnedMajors({
 
   return (
     <>
-      {returnedMajors.length > 0 ? (
+      {returnedMajors.length > 0 && (
         <div className="space-y-3">
           <div className="w-full flex items-center justify-center">
             <div className="flex items-center justify-end space-x-2 py-4">
@@ -205,14 +205,14 @@ function ReturnedMajors({
                     </div>
 
                     {/* Score */}
-                    <div className="px-4 py-2 text-white font-semibold bg-linear-to-r from-cyan-400 to-sky-500 whitespace-nowrap flex items-center justify-center">
+                    <div className="px-2 py-1 text-white font-semibold bg-linear-to-r from-cyan-400 to-sky-500 whitespace-nowrap flex items-center justify-center">
                       {majorInfo.score} đ
                     </div>
 
                     {/* Method + subject */}
-                    <div className="flex flex-col gap-2 ml-2">
-                      <div className="p-1 rounded text-xs text-white bg-linear-to-r from-sky-500 to-indigo-500">
-                        Phương thức {getMethodName(majorInfo.methodId)}
+                    <div className="flex flex-wrap gap-2 ml-2">
+                      <div className="p-1 rounded text-xs w-fit text-white font-semibold bg-linear-to-r from-sky-500 to-indigo-500">
+                        Pt. {getMethodName(majorInfo.methodId)}
                       </div>
 
                       <SubjectGroupBoxes
@@ -252,8 +252,6 @@ function ReturnedMajors({
             </div>
           </div>
         </div>
-      ) : (
-        <></>
       )}
     </>
   );
