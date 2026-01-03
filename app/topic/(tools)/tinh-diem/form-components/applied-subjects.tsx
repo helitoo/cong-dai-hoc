@@ -34,7 +34,9 @@ export default function AppliedSubjects({
       <div className="grid grid-cols-3 gap-6">
         {groups.map((group) => (
           <div key={group.label}>
-            <h4 className="mb-2 text-badge w-full">{group.label}</h4>
+            <h4 className="hidden md:block mb-2 text-badge w-full">
+              {group.label}
+            </h4>
 
             <div className="flex flex-col gap-2 ml-5">
               {group.subjects.map((subj) => (

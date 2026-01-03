@@ -16,10 +16,9 @@ export default function Page() {
         <h1 className="box-title w-full">Trắc nghiệm tính cách</h1>
 
         <Accordion
-          type="single"
+          type="multiple"
           className="bg-background"
-          defaultValue="item-1"
-          collapsible
+          defaultValue={["item-1", "item-2", "item-3"]}
         >
           <AccordionItem value="item-1">
             <AccordionTrigger>Giới thiệu</AccordionTrigger>

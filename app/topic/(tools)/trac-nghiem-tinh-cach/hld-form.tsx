@@ -54,7 +54,7 @@ export default function HldForm() {
                   control={form.control}
                   name={`hldQuestions.${opnIndex}.freqNodes.${freqIndex}.score`}
                   render={({ field }) => (
-                    <FormItem className="ml-20">
+                    <FormItem className="md:ml-20">
                       <FormLabel className="font-normal p-1">
                         <div className="font-bold bg-muted p-1 rounded-full">
                           {opnIndex + 1}.{freqIndex + 1}/6
