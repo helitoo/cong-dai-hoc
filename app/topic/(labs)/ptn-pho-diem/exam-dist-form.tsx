@@ -100,6 +100,7 @@ export default function ExamDistForm({
         <Label className="ml-1">Môn thi</Label>
 
         <NativeSelect
+          disabled={!["thpt", "dgcb"].includes(distQuery.examId)}
           className="w-full"
           value={distQuery.subjectId}
           onChange={(e) =>

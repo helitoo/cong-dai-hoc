@@ -71,10 +71,7 @@ export function IndustrySelect({
   }
 
   function removeRow(index: number) {
-    setRows((prev) => {
-      const next = prev.filter((_, i) => i !== index);
-      return next.length ? next : [{ l1: "", l3: "" }];
-    });
+    setRows((prev) => prev.filter((_, i) => i !== index));
   }
 
   return (

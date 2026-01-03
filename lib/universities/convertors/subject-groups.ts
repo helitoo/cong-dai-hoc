@@ -265,9 +265,11 @@ export function getSubjectGroupName(
 }
 
 export function getExactSubjectGroupFromName(subjectGroupName: string) {
+  const realSubjectGroupIds = subjectGroupIds.slice(2);
+  // console.log(realSubjectGroupIds);
   return getExactData(
     subjectGroupName,
-    subjectGroupIds.map((groupId) => getSubjectGroupName(groupId)),
-    [...subjectGroupIds]
+    realSubjectGroupIds.map((groupId) => getSubjectGroupName(groupId)),
+    realSubjectGroupIds
   );
 }

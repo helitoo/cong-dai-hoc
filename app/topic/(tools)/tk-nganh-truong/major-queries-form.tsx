@@ -69,7 +69,7 @@ export default function MajorQueriesForm() {
               setValue={form.setValue}
               getExactValue={getExactSchoolFromName}
               name="schoolIds"
-              label="Tên trường / tên viết tắt"
+              label="Tên trường"
               placeholder="Bách khoa HCM..."
             />
           </div>

@@ -1,4 +1,6 @@
 function normalizeVietnamese(str: string): string {
+  if (!str || str.length === 0) return "";
+
   if (/^\d+$/.test(str)) return "";
 
   const normalized = str
