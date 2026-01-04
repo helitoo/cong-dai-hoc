@@ -20,30 +20,30 @@ import {
 import { supabase } from "@/lib/supabase/client";
 
 export default function AppNavbar() {
-  const [user, setUser] = useState<UserMetadata | undefined>(undefined);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const getMetadata = useUserMetadata((s) => s.getMetadata);
+  // const [user, setUser] = useState<UserMetadata | undefined>(undefined);
+  // const [isAdmin, setIsAdmin] = useState(false);
+  // const getMetadata = useUserMetadata((s) => s.getMetadata);
 
-  useEffect(() => {
-    async function initUser() {
-      setUser(await getMetadata());
-    }
-    initUser();
-  }, []);
+  // useEffect(() => {
+  //   async function initUser() {
+  //     setUser(await getMetadata());
+  //   }
+  //   initUser();
+  // }, []);
 
-  useEffect(() => {
-    async function initUser() {
-      const { data } = await supabase
-        .from("profile")
-        .select("is_admin")
-        .eq("auid", user?.auid);
+  // useEffect(() => {
+  //   async function initUser() {
+  //     const { data } = await supabase
+  //       .from("profile")
+  //       .select("is_admin")
+  //       .eq("auid", user?.auid);
 
-      const isAdmin = data?.[0]?.is_admin ?? false;
+  //     const isAdmin = data?.[0]?.is_admin ?? false;
 
-      setIsAdmin(isAdmin);
-    }
-    initUser();
-  }, [user]);
+  //     setIsAdmin(isAdmin);
+  //   }
+  //   initUser();
+  // }, [user]);
 
   return (
     <header className="flex justify-between items-center p-2 w-full shadow-md z-10 bg-background sticky top-0">
@@ -66,7 +66,7 @@ export default function AppNavbar() {
       <div className="flex items-center gap-2 pr-2">
         <ModeToggle />
 
-        {user ? (
+        {/* {user ? (
           <ProfileDropdown
             auid={user.auid}
             avt_variant={
@@ -86,7 +86,7 @@ export default function AppNavbar() {
           />
         ) : (
           <SigninSignupDirection />
-        )}
+        )} */}
 
         <SidebarTrigger />
       </div>
